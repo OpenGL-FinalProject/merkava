@@ -1,0 +1,12 @@
+﻿  Scene07.cpp
+c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(86): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(87): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(93): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(94): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  GLScenesInfo.cpp
+  GLFramework.cpp
+  코드를 생성하고 있습니다...
+  GLFramework.vcxproj -> C:\Users\Merillen\Desktop\OpenGL_Framework-master\x64\Debug\GLFramework.exe
+  GLFramework.vcxproj -> C:\Users\Merillen\Desktop\OpenGL_Framework-master\x64\Debug\GLFramework.pdb (Partial PDB)
