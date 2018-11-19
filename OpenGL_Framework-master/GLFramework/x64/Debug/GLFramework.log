@@ -1,12 +1,119 @@
-﻿  Scene07.cpp
-c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(86): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(87): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(93): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\merillen\desktop\opengl_framework-master\glframework\scene07.cpp(94): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  코드를 생성하고 있습니다...
-  컴파일하고 있습니다...
-  GLScenesInfo.cpp
-  GLFramework.cpp
-  코드를 생성하고 있습니다...
-  GLFramework.vcxproj -> C:\Users\Merillen\Desktop\OpenGL_Framework-master\x64\Debug\GLFramework.exe
-  GLFramework.vcxproj -> C:\Users\Merillen\Desktop\OpenGL_Framework-master\x64\Debug\GLFramework.pdb (Partial PDB)
+﻿  Transformations.cpp
+  Timer.cpp
+  Texture.cpp
+  stdafx.cpp
+  Source.cpp
+  SoundPlayer.cpp
+  Sound.cpp
+  Scene07.cpp
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene07.cpp(87): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene07.cpp(88): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene07.cpp(94): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene07.cpp(95): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene06.cpp
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(30): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(193): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(278): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(291): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(304): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(322): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(323): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(328): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(329): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(333): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(335): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(338): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(405): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(435): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(437): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(451): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(452): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(464): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(468): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(470): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene06.cpp(536): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene05.cpp
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(31): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(32): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(39): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(89): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(90): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(91): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(92): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(101): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene05.cpp(102): warning C4244: '=': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene04.cpp
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene04.cpp(91): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene04.cpp(93): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene04.cpp(165): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene04.cpp(180): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene03.cpp
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(26): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(215): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(300): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(313): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(326): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(344): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(345): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(350): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(351): warning C4244: '=': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(355): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(357): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(360): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(398): warning C4244: '인수': 'double'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(399): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(447): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(477): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(479): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(526): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(527): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(539): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(543): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(545): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(573): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(573): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(574): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(579): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(579): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(580): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(585): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(585): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(586): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(591): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(591): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene03.cpp(592): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+  Scene02.cpp
+  Scene01.cpp
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(66): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(66): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(67): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(70): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(72): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(73): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(73): warning C4305: '+=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(74): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(75): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(75): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(76): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(78): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(78): warning C4305: '-=': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(79): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(100): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\scene01.cpp(102): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene00_Main.cpp
+  Robot.cpp
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(29): warning C4244: '/=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(30): warning C4244: '/=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(39): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(43): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(47): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(51): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(82): warning C4244: '+=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(86): warning C4244: '-=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(102): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(136): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(148): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(163): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\aeco-nu-drjxes\desktop\merkava\opengl_framework-master\glframework\robot.cpp(175): warning C4244: '인수': 'int'에서 'GLfloat'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Picking.cpp
+  Object.cpp
