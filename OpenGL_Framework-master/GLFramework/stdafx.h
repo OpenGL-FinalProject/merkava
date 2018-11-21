@@ -20,3 +20,6 @@
 /* GL */
 #include "Dependencies/GL/glew.h"
 #include "Dependencies/GL/freeglut.h"
+
+const int DEF_WIN_HEIGHT = GetSystemMetrics(SM_CYSCREEN);
+const int DEF_WIN_WIDTH = DEF_WIN_HEIGHT / 1.5;

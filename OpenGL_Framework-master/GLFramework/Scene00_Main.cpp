@@ -47,10 +47,7 @@ void S00Logo::keyboard(int key, bool pressed, int x, int y, bool special)
 		case '1': m_Framework->toScene("1"); break;
 		case '2': m_Framework->toScene("2"); break;
 		case '3': m_Framework->toScene("3"); break;
-		case '4': m_Framework->toScene("4"); break;
-		case '5': m_Framework->toScene("5"); break;
-		case '6': m_Framework->toScene("6"); break;
-		case '7': m_Framework->toScene("7"); break;
+
 		}
 		
 }

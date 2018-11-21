@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "GLFramework.h"
+#include <windows.h>
 
-constexpr auto DEF_WIN_WIDTH	{ 800 };
-constexpr auto DEF_WIN_HEIGHT	{ 600 };
+
+
 
 using namespace std;
 

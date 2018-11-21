@@ -1,4 +1,4 @@
-﻿  GLFramework.cpp
-  GLScenesInfo.cpp
-  코드를 생성하고 있습니다...
+﻿  Scene00_Main.cpp
+c:\users\우찬희\desktop\git\merkava\opengl_framework-master\glframework\stdafx.h(25): warning C4244: '초기화 중': 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\우찬희\desktop\git\merkava\opengl_framework-master\glframework\stdafx.h(25): warning C4244: '초기화 중': 'double'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   GLFramework.vcxproj -> C:\Users\우찬희\Desktop\git\merkava\OpenGL_Framework-master\x64\Debug\GLFramework.exe
