@@ -7,10 +7,7 @@
 #include "Scene01.h"
 #include "Scene02.h"
 #include "Scene03.h"
-#include "Scene04.h"
-#include "Scene05.h"
-#include "Scene06.h"
-#include "Scene07.h"
+
 
 struct GLSceneInfo
 {
@@ -26,10 +23,6 @@ const GLSceneInfo SCENES[] =
 	{"1", new S01Main, false},
 	{"2", new S02Main, false},
 	{"3", new S03Main, false},
-	{"4", new S04Main, false},
-	{"5", new S5Main,  false},
-	{"6", new S06Main, false},
-	{"7", new S07Main, false}
 };
 
 /*~~~STARTING SCENE~~~*/

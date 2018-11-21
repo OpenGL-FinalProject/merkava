@@ -76,7 +76,7 @@ void S01Main::keyboard(int key, bool pressed, int x, int y, bool special)
 				  m_Sphere.m_qrRotation.rotate(-0.1, m_Sphere.m_qrRotation.rotatePoint({ 1, 0, 0 })); break;
 		case 'x':  break;
 		case 'd': if (rZ > -155) {m_Sphere.move(2.707 * 200 / 36, 0.f, 0.f); rZ -= 2.707;}
-			m_Sphere.m_qrRotation.rotate(0.1, m_Sphere.m_qrRotation.rotatePoint({ 0, 0, 1 })); break;
+			m_Sphere.m_qrRotation.rotate(0.1, m_Sphere.m_qrRotation.rotatePoint({ 0, 0, 1 })); break;	
 		case ' ': m_Framework->toScene("Main"); break;
 		case 'o': rX = 0; rY = 0; rZ = 0; m_Sphere.m_qrRotation.resetQuaternion(); m_Sphere.setPosition(0, -500.f, 0); m_Camera.resetRotation(); break;
 		case '+': m_Camera.setDistance(m_Camera.getDistance() - 5); break;
@@ -85,7 +85,7 @@ void S01Main::keyboard(int key, bool pressed, int x, int y, bool special)
 		case 'j': tX--; break;
 		case 'k': tY--; break;
 		case 'l': tX++; break;
-		case '0': s = (s + 1) % 2; break;
+		case '0': s = (s + 1) % 2; break;	
 		}
 	}
 }

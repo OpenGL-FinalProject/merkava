@@ -117,20 +117,8 @@
     <ClCompile Include="AirPlane.cpp">
       <Filter>Source Files\Utilities\3D Objects</Filter>
     </ClCompile>
-    <ClCompile Include="Scene04.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene05.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene06.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Robot.cpp">
       <Filter>Source Files\Utilities\Space and Time</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene07.cpp">
-      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -197,20 +185,8 @@
     <ClInclude Include="AirPlane.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Scene04.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene05.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene06.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="Robot.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene07.h">
-      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
