@@ -15,6 +15,7 @@ void S01Main::init()
 	m_Camera.setDistance(3000.f);
 	m_Camera.setPerspective(45.f, 0.125f, 7'000.f);
 	m_Camera.setSensitivity(10.f);
+	m_Camera.setEye(Vector3{ 100.f,100.f,200.f });
 
 	m_Plane.setModel("Cube", 2000, false);
 	m_Plane.setColor(Vector3(0.f, 1.f, 1.f));
