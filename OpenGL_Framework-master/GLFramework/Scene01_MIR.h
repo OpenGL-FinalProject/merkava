@@ -30,5 +30,6 @@ private:
 	int				tX, tY;
 	Camera			m_Camera;
 
+	SoundPlayer MIL;
 	bool s;
 };

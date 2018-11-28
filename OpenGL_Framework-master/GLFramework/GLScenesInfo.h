@@ -7,7 +7,7 @@
 #include "Scene01.h"
 #include "Scene02.h"
 #include "Scene03.h"
-
+#include "Scene01_MIR.h"
 
 struct GLSceneInfo
 {
@@ -23,6 +23,7 @@ const GLSceneInfo SCENES[] =
 	{"1", new S01Main, false},
 	{"2", new S02Main, false},
 	{"3", new S03Main, false},
+	{"Made In Love", new Scene01_MIR, false}
 };
 
 /*~~~STARTING SCENE~~~*/

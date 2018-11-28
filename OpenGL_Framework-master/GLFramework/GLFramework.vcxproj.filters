@@ -120,6 +120,9 @@
     <ClCompile Include="Robot.cpp">
       <Filter>Source Files\Utilities\Space and Time</Filter>
     </ClCompile>
+    <ClCompile Include="Scene01_MIR.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="Robot.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene01_MIR.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

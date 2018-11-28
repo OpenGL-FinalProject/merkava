@@ -45,9 +45,9 @@ void S00Logo::keyboard(int key, bool pressed, int x, int y, bool special)
 		switch (key)
 		{
 		case '1': m_Framework->toScene("1"); break;
-		case '2': m_Framework->toScene("2"); break;
-		case '3': m_Framework->toScene("3"); break;
-
+		//case '2': m_Framework->toScene("2"); break;
+		//case '3': m_Framework->toScene("3"); break;
+		case 's': m_Framework->toScene("Made In Love"); break;
 		}
 		
 }

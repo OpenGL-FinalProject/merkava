@@ -17,6 +17,10 @@ void Scene01_MIR::init()
 	m_Camera.setSensitivity(10.f);
 	m_Camera.setEye(Vector3{ 100.f,100.f,200.f });
 	
+	MIL.init();
+	MIL.selectFolder("Resources");
+
+	MIL.play();
 }
 
 void Scene01_MIR::exit()
@@ -32,7 +36,6 @@ void Scene01_MIR::reset()
 void Scene01_MIR::render()
 {
 	m_Camera.ready();
-
 }
 
 void Scene01_MIR::reshape(int w, int h)
