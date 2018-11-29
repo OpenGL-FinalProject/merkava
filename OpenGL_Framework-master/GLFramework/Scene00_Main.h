@@ -1,4 +1,4 @@
-#pragma oncehttps://t1.daumcdn.net/cfile/tistory/15085A454F8EEE8129
+#pragma once
 #include "GLScene.h"
 
 /* UTILITIES */
@@ -33,7 +33,6 @@ private:
 	Model      m_Model;
 	Object	   m_Title;
 	Scene00BG  BG;
-
 
 	float      get_time;
 	float      start_button_alpha;

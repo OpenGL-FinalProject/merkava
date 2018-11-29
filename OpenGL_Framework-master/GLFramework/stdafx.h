@@ -13,6 +13,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <math.h>
 
 /* FMOD */
 #include "Dependencies/FMOD/include/fmod.hpp"

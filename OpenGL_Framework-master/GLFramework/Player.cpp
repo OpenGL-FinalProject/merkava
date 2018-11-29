@@ -24,6 +24,7 @@ void Player::render()
 		//
 		// Player Draw
 		//
+		glColor3f(1.f, 1.f, 1.f);
 		glutSolidSphere(1.f, 16, 16);
 
 		glEnable(GL_CULL_FACE);

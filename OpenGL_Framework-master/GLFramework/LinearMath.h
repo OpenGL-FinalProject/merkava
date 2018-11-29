@@ -1,5 +1,6 @@
 #pragma once
 #define EPSILON				0.001f
+#include <math.h>
 
 class Vector2
 {

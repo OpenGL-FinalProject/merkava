@@ -1,8 +1,10 @@
+
 #include "stdafx.h"
 #include "Scene00_Main.h"
 #include "GLFramework.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
+
 
 S00Logo::S00Logo()
 {
@@ -32,11 +34,11 @@ void S00Logo::reset()
 void S00Logo::render()
 {
 	m_Camera.ready();
+
 	BG.render();
 	
-	
-	print("Press any key to start", -20, -30, -150,1.f,1.f,1.f, start_button_alpha); //현재 x,y값 상수 
-	                                                                               //percpective.fovy = 30으로 할 시 x = 0으로 하면 중앙 맞음
+	print("Press any key to start",8 , -30, 100,1.f,1.f,1.f, start_button_alpha); //현재 x,y값 상수 
+	           																			
 }
 
 void S00Logo::reshape(int w, int h)
