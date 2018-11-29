@@ -4,7 +4,7 @@
 class MapData
 {
 public:
-	Vector3 map[200] = {};
+	Vector3 map[500] = {};
 	int pointNum;
 
 	void init(int stageNum);
@@ -17,4 +17,7 @@ public:
 
 	float speed;			//한 박에 10씩 이동합니다
 	float distance;
+	Vector3 PointToPointVector;
+
+	std::ifstream map_file;
 };
