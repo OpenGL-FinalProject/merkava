@@ -59,14 +59,26 @@ Vector3 MapData::getPlayerPosition(float time)
 	int i = 0;
 	while (true)
 	{
-		if (distance < V3::dist(map[i], map[i + 1]))
-			break;
+		if (i + 1 < pointNum)
+		{
+			if (distance < V3::dist(map[i], map[i + 1]))
+				break;
+			else
+			{
+				distance -= V3::dist(map[i], map[i + 1]);
+				i++;
+			}
+		}
 		else
 		{
-			distance -= V3::dist(map[i], map[i + 1]);
-			i++;
+			return Vector3(0.f, 0.f, 0.f);
 		}
 	}
+	Vector3 PointToPointVector;
+	PointToPointVector = V3::normalize(V3::subtract(map[i + 1], map[i]));
+	PointToPointVector.x *= distance;
+	PointToPointVector.y *= distance;
+	PointToPointVector.z *= distance;
 
-	return Vector3(0.f,0.f,0.f);
+	return V3::add(PointToPointVector,map[i]);
 }

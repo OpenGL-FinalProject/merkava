@@ -75,5 +75,7 @@ void Scene01_MIR::update(float fDeltaTime)
 {
 	get_time += fDeltaTime;
 	P.update(fDeltaTime, Map.getPlayerPosition(get_time));
+	m_Camera.setEye(Map.getCameraPosition(get_time));
+	m_Camera.setTarget(P.Position);
 	printf("%f\n", get_time);
 }
