@@ -21,9 +21,9 @@ void Player::render()
 	glPushMatrix();
 	{
 		glTranslatef(Position.x, Position.y, Position.z);
-		//
-		// Player Draw
-		//
+		
+		////////////////Player Draw///////////////////
+		
 		glColor3f(1.f, 1.f, 1.f);
 		glutSolidSphere(1.f, 16, 16);
 
@@ -34,7 +34,7 @@ void Player::render()
 		glutSolidSphere(1.5f, 16, 16);
 		glDisable(GL_BLEND);
 
-		
+		///////////////////////////////////////////////
 	}
 	glPopMatrix();
 }
