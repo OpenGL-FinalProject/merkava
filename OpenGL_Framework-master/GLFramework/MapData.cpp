@@ -65,7 +65,7 @@ void MapData::init(int stageNum)
 		else if (tmp[0] == 16.f)
 		{
 			map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4] >> tmp[5] >> tmp[6] >> tmp[7] >> tmp[8] >> tmp[9] >> tmp[10] >> tmp[11] >> tmp[12] >> tmp[13] >> tmp[14] >> tmp[15];
-			for (float i = 0.f; i < 12.f; i += 1.f)
+			for (float i = 0.f; i < 16.f; i += 1.f)
 			{
 				if (tmp[int(i)] == 1)
 				{
@@ -77,7 +77,7 @@ void MapData::init(int stageNum)
 		else if (tmp[0] == 24.f)
 		{
 			map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4] >> tmp[5] >> tmp[6] >> tmp[7] >> tmp[8] >> tmp[9] >> tmp[10] >> tmp[11] >> tmp[12] >> tmp[13] >> tmp[14] >> tmp[15] >> tmp[16] >> tmp[17] >> tmp[18] >> tmp[19] >> tmp[20] >> tmp[21] >> tmp[22] >> tmp[23];
-			for (float i = 0.f; i < 12.f; i += 1.f)
+			for (float i = 0.f; i < 24.f; i += 1.f)
 			{
 				if (tmp[int(i)] == 1)
 				{
