@@ -5,7 +5,10 @@ class MapData
 {
 public:
 	Vector3 map[500] = {};
+	Vector3 pattern[1000] = {};
 	int pointNum;
+	int patternNum;
+	float patternLineNum;
 
 	void init(int stageNum);
 	void render();
