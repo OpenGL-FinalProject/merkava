@@ -33,7 +33,7 @@ void S00Logo::render()
 {
 	m_Camera.ready();
 	
-	print("Press any key to start", 0, -30, -150, start_button_alpha); //현재 y값 상수 
+	print("Press any key to start", 0, -30, -150,1.f,1.f,1.f, start_button_alpha); //현재 y값 상수 
 }
 
 void S00Logo::reshape(int w, int h)

@@ -4,8 +4,10 @@
 
 GLFramework * m_Framework = nullptr;
 
-void GLScene::print(std::string str, float x, float y, float z) const
+void GLScene::print(std::string str, float x, float y, float z, float r, float g, float b) const
 {
+	glColor3f(r, g, b);
+
 	glPushMatrix();
 	float sz = static_cast<float>(str.size());
 	glRasterPos3f(x - sz*(5.f / 6.f), y, z);
@@ -14,11 +16,11 @@ void GLScene::print(std::string str, float x, float y, float z) const
 	glPopMatrix();
 }
 
-void GLScene::print(std::string str, float x, float y, float z, float a) const
+void GLScene::print(std::string str, float x, float y, float z,  float r, float g, float b, float a ) const
 {
 	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
-	glColor4f(1.0, 1.0, 1.0, a);
+	glColor4f(r,g,b, a);
 
 	glPushMatrix();
 	float sz = static_cast<float>(str.size());
@@ -43,5 +45,5 @@ void GLScene::drawLoadingScreen()
 
 void GLScene::loading()
 {
-	print("Loading...", 0, 0, -250);	
+	print("Loading...", 1.f,1.f,1.f,0, 0, -250);	
 }

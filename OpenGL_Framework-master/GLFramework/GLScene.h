@@ -25,8 +25,8 @@ public:
 
 	virtual void loading(); // Testing. Very basic Loading Screen. It's virtual so each Scene may have a Different Loading Screen if desired.
 
-	void print(std::string str, float x, float y, float z) const; // for debugging purposes only
-	void print(std::string str, float x, float y, float z, float a) const;
+	void print(std::string str, float x, float y, float z, float r, float g, float b) const; // for debugging purposes only
+	void print(std::string str, float x, float y, float z, float r, float g, float b, float a) const;
 
 public:
 	bool RTLoad		{ false };	// if to load when program starting or while in Runtime
