@@ -14,4 +14,7 @@ public:
 
 	MapData();
 	~MapData();
+
+	float speed;			//한 박에 10씩 이동합니다
+	float distance;
 };

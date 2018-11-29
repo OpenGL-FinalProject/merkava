@@ -7,6 +7,7 @@
 #include "Camera.h"
 #include "SoundPlayer.h"
 #include "MapData.h"
+#include "Player.h"
 /* ------------ */
 
 class Scene01_MIR :
@@ -34,6 +35,9 @@ private:
 	SoundPlayer		MIL;
 	bool			s;
 
+	//
+
 	MapData			Map;
+	Player			P;
 	float			get_time;
 };

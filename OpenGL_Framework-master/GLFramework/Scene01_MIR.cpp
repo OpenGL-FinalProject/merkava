@@ -15,7 +15,7 @@ void Scene01_MIR::init()
 	m_Camera.setDistance(3000.f);
 	m_Camera.setPerspective(45.f, 0.125f, 7'000.f);
 	m_Camera.setSensitivity(10.f);
-	m_Camera.setEye(Vector3{ 100.f,100.f,200.f });
+	m_Camera.setEye(Vector3{ 100.f,100.f,300.f });
 	
 	MIL.init();
 	MIL.selectFolder("Resources");
@@ -40,6 +40,7 @@ void Scene01_MIR::render()
 	m_Camera.ready();
 
 	Map.render();
+	P.render();
 }
 
 void Scene01_MIR::reshape(int w, int h)
@@ -64,15 +65,15 @@ void Scene01_MIR::mouse(int button, bool pressed, int x, int y)
 
 void Scene01_MIR::motion(bool pressed, int x, int y)
 {
-	/*if (s)
+	if (s)
 		m_Camera.rotate(x, 0.f, pressed);
 	else
-		m_Camera.rotate(0.f, y, pressed);*/
+		m_Camera.rotate(0.f, y, pressed);
 }
 
 void Scene01_MIR::update(float fDeltaTime)
 {
 	get_time += fDeltaTime;
-
-	printf("%f", get_time);
+	P.update(fDeltaTime, Map.getPlayerPosition(get_time));
+	printf("%f\n", get_time);
 }

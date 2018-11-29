@@ -1,8 +1,20 @@
 #include "stdafx.h"
 #include "MapData.h"
 
+MapData::MapData()
+{
+
+}
+
+MapData::~MapData()
+{
+
+}
+
 void MapData::init(int stageNum)
 {
+	speed = (88.f / 60.f) * 10.f;
+	distance = 0;
 	pointNum = 4;				//만들어가면서 바꿔야하는 부분
 	
 	map[0].x = 0;
@@ -42,15 +54,19 @@ Vector3 MapData::getCameraPosition(float time)
 
 Vector3 MapData::getPlayerPosition(float time)
 {
+	distance = time*speed;
 
-	return Vector3();
-}
+	int i = 0;
+	while (true)
+	{
+		if (distance < V3::dist(map[i], map[i + 1]))
+			break;
+		else
+		{
+			distance -= V3::dist(map[i], map[i + 1]);
+			i++;
+		}
+	}
 
-MapData::MapData()
-{
-}
-
-
-MapData::~MapData()
-{
+	return Vector3(0.f,0.f,0.f);
 }

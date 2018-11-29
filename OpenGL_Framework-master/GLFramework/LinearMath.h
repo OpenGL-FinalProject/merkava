@@ -176,6 +176,13 @@ namespace V3
 		return v3Result;
 	}
 
+	inline int dist(const Vector3& lhs, const Vector3& rhs)
+	{
+		int dist;
+
+		return sqrt(pow(rhs.x - lhs.x, 2) + pow(rhs.y - lhs.y, 2) + pow(rhs.z - lhs.z, 2));
+	}
+
 	inline float size(const Vector3& v3Vector)
 	{
 		return sqrtf(V3::dot(v3Vector, v3Vector));
