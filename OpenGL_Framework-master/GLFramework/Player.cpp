@@ -24,7 +24,7 @@ void Player::render()
 		//
 		// Player Draw
 		//
-		glutSolidCube(3.f);
+		glutSolidCube(1.f);
 	}
 	glPopMatrix();
 }

@@ -178,8 +178,6 @@ namespace V3
 
 	inline int dist(const Vector3& lhs, const Vector3& rhs)
 	{
-		int dist;
-
 		return sqrt(pow(rhs.x - lhs.x, 2) + pow(rhs.y - lhs.y, 2) + pow(rhs.z - lhs.z, 2));
 	}
 
@@ -196,6 +194,15 @@ namespace V3
 		v3Result.y = v3Vector.y / fSize;
 		v3Result.z = v3Vector.z / fSize;
 
+		return v3Result;
+	}
+
+	inline Vector3 times(const Vector3& v3Vector, float length)
+	{
+		Vector3 v3Result;
+		v3Result.x = v3Vector.x * length;
+		v3Result.y = v3Vector.y * length;
+		v3Result.z = v3Vector.z * length;
 		return v3Result;
 	}
 }

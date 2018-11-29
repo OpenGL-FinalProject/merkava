@@ -75,7 +75,7 @@ void Scene01_MIR::update(float fDeltaTime)
 {
 	get_time += fDeltaTime;
 	P.update(fDeltaTime, Map.getPlayerPosition(get_time));
-	m_Camera.setEye(Map.getCameraPosition(get_time));
-	//m_Camera.setEye(Vector3(P.Position.x, P.Position.y, P.Position.z + 50.f));
+	//m_Camera.setEye(Map.getCameraPosition(get_time));
+	m_Camera.setEye(Vector3(P.Position.x + 50.f, P.Position.y + 50.f, P.Position.z + 50.f));
 	m_Camera.setTarget(P.Position);
 }

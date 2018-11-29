@@ -71,10 +71,7 @@ Vector3 MapData::getPlayerPosition(float time)
 			return Vector3(0.f, 0.f, 0.f);
 		}
 	}
-	PointToPointVector = V3::normalize(V3::subtract(map[i + 1], map[i]));
-	PointToPointVector.x *= distance;
-	PointToPointVector.y *= distance;
-	PointToPointVector.z *= distance;
+	PointToPointVector = V3::times(V3::normalize(V3::subtract(map[i + 1], map[i])),distance);
 
 	return V3::add(PointToPointVector,map[i]);
 }
