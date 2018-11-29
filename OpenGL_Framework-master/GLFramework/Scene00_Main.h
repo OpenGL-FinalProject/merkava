@@ -1,4 +1,4 @@
-#pragma once
+#pragma oncehttps://t1.daumcdn.net/cfile/tistory/15085A454F8EEE8129
 #include "GLScene.h"
 
 /* UTILITIES */

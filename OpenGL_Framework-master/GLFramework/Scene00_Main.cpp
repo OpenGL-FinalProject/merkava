@@ -31,7 +31,7 @@ void S00Logo::render()
 {
 	m_Camera.ready();
 	
-	print("Press any key to start", 0, 0, -150);
+	print("Press any key to start", 0, 0, -150,0.5);
 }
 
 void S00Logo::reshape(int w, int h)
