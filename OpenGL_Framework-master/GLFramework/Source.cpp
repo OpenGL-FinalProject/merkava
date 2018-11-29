@@ -7,7 +7,7 @@
 
 using namespace std;
 
-GLFramework fw("OpenGL Framework Test");
+GLFramework fw("Merkava");
 
 int main(int argc, char* argv[])
 {

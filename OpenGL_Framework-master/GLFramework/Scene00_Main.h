@@ -29,5 +29,9 @@ private:
 	Camera	m_Camera;
 	Model	m_Model;
 	Object	m_Title;
+
+
+	float   get_time;
+	float   start_button_alpha;
 };
 

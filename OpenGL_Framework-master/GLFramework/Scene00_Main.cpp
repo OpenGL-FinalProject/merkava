@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "Scene00_Main.h"
 #include "GLFramework.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 S00Logo::S00Logo()
 {
@@ -31,7 +33,7 @@ void S00Logo::render()
 {
 	m_Camera.ready();
 	
-	print("Press any key to start", 0, 0, -150,0.5);
+	print("Press any key to start", 0, -30, -150, start_button_alpha); //현재 y값 상수 
 }
 
 void S00Logo::reshape(int w, int h)
@@ -61,6 +63,8 @@ void S00Logo::motion(bool pressed, int x, int y)
 }
 
 void S00Logo::update(float fDeltaTime)
-
 {
+	get_time += fDeltaTime;
+
+	start_button_alpha = sin((get_time - (int)get_time) * M_PI);
 }
