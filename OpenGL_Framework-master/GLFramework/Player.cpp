@@ -24,7 +24,16 @@ void Player::render()
 		//
 		// Player Draw
 		//
-		glutSolidCube(1.f);
+		glutSolidSphere(1.f, 16, 16);
+
+		glEnable(GL_CULL_FACE);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glColor4f(1.0, 1.0, 1.0, 0.3);
+		glutSolidSphere(1.5f, 16, 16);
+		glDisable(GL_BLEND);
+
+		
 	}
 	glPopMatrix();
 }
