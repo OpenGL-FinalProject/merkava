@@ -135,6 +135,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files\Utilities\3D Objects</Filter>
     </ClCompile>
+    <ClCompile Include="Scene00BG.cpp">
+      <Filter>Source Files\Utilities\3D Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -210,6 +213,9 @@
       <Filter>Header Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Header Files\Utilities\3D Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene00BG.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
   </ItemGroup>

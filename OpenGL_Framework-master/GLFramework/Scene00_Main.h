@@ -5,6 +5,7 @@
 #include "Model.h"
 #include "Object.h"
 #include "Camera.h"
+#include "Scene00BG.h"
 /* ------------ */
 
 class S00Logo :
@@ -24,14 +25,17 @@ public:
 	virtual void motion(bool pressed, int x, int y);
 	virtual void update(float fDeltaTime);
 
+
+
 private:
 
-	Camera	m_Camera;
-	Model	m_Model;
-	Object	m_Title;
+	Camera	   m_Camera;
+	Model      m_Model;
+	Object	   m_Title;
+	Scene00BG  BG;
 
 
-	float   get_time;
-	float   start_button_alpha;
+	float      get_time;
+	float      start_button_alpha;
 };
 

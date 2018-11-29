@@ -142,6 +142,7 @@
     <ClCompile Include="Picking.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Robot.cpp" />
+    <ClCompile Include="Scene00BG.cpp" />
     <ClCompile Include="Scene00_Main.cpp" />
     <ClCompile Include="Scene01.cpp" />
     <ClCompile Include="Scene01_MIR.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="Picking.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Robot.h" />
+    <ClInclude Include="Scene00BG.h" />
     <ClInclude Include="Scene00_Main.h" />
     <ClInclude Include="Scene01.h" />
     <ClInclude Include="Scene01_MIR.h" />

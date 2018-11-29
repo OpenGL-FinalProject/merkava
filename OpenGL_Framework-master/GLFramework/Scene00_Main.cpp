@@ -16,7 +16,7 @@ void S00Logo::init()
 {
 
 	m_Camera.setDistance(200.f);
-	m_Camera.setPerspective(30.f, 0.125f, 3500.f);
+	m_Camera.setPerspective(60.f, 0.125f, 3500.f);
 	m_Camera.setSensitivity(1.f);
 
 }
@@ -32,8 +32,11 @@ void S00Logo::reset()
 void S00Logo::render()
 {
 	m_Camera.ready();
+	BG.render();
 	
-	print("Press any key to start", 0, -30, -150,1.f,1.f,1.f, start_button_alpha); //현재 y값 상수 
+	
+	print("Press any key to start", -20, -30, -150,1.f,1.f,1.f, start_button_alpha); //현재 x,y값 상수 
+	                                                                               //percpective.fovy = 30으로 할 시 x = 0으로 하면 중앙 맞음
 }
 
 void S00Logo::reshape(int w, int h)
@@ -64,7 +67,10 @@ void S00Logo::motion(bool pressed, int x, int y)
 
 void S00Logo::update(float fDeltaTime)
 {
+	BG.update(fDeltaTime);
 	get_time += fDeltaTime;
-
 	start_button_alpha = sin((get_time - (int)get_time) * M_PI);
+	
 }
+
+
