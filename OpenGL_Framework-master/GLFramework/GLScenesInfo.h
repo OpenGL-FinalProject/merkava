@@ -4,10 +4,11 @@
 
 /*~~~~~HEADER FILES~~~~*/
 #include "Scene00_Main.h"
-#include "Scene01.h"
+#include "Scene01_Tutorial.h"
+#include "Scene02_MIR.h"
 #include "Scene02.h"
 #include "Scene03.h"
-#include "Scene01_MIR.h"
+
 
 struct GLSceneInfo
 {
@@ -20,10 +21,11 @@ struct GLSceneInfo
 const GLSceneInfo SCENES[] =
 {
 	{"Main", new S00Logo, true},
-	{"1", new S01Main, false},
+	{"Tutorial", new S01_Tutorial, false},
+	{"Made In Love", new Scene02_MIR, false},
 	{"2", new S02Main, false},
 	{"3", new S03Main, false},
-	{"Made In Love", new Scene01_MIR, false}
+
 };
 
 /*~~~STARTING SCENE~~~*/

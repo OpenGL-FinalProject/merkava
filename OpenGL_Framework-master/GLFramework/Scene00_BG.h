@@ -1,11 +1,11 @@
 #pragma once
 #include "Player.h"
 
-class Scene00BG
+class Scene00_BG
 {
 public:
-	Scene00BG();
-	~Scene00BG();
+	Scene00_BG();
+	~Scene00_BG();
 	void update(const float& fDeltaTime);
 	void render();
 

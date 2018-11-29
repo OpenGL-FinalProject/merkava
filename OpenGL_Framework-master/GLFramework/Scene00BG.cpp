@@ -1,16 +1,16 @@
-#include "Scene00BG.h"
+#include "Scene00_BG.h"
 #include "stdafx.h"
 
-Scene00BG::Scene00BG()
+Scene00_BG::Scene00_BG()
 {
 	player.update(NULL, player_pos);
 }
 
-Scene00BG::~Scene00BG()
+Scene00_BG::~Scene00_BG()
 {
 }
 
-void Scene00BG::update(const float& fDeltaTime)
+void Scene00_BG::update(const float& fDeltaTime)
 {
 	cylinder_rotate_y +=  cylinder_rotate_y_speed_per_sec * fDeltaTime;
 	if (cylinder_rotate_y > 360)
@@ -20,7 +20,7 @@ void Scene00BG::update(const float& fDeltaTime)
 	if (cylinder_translate_y > (cylinder_height / 16))
 		cylinder_translate_y -= (cylinder_height / 16);
 }
-void Scene00BG::render()
+void Scene00_BG::render()
 {
 	//하드코딩 체고ㅗ오ㅗ오오오ㅗ오
 

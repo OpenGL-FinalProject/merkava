@@ -1,16 +1,16 @@
 #include "stdafx.h"
-#include "Scene01.h"
+#include "Scene01_Tutorial.h"
 #include "GLFramework.h"
 
-S01Main::S01Main()
+S01_Tutorial::S01_Tutorial()
 {
 }
 
-S01Main::~S01Main()
+S01_Tutorial::~S01_Tutorial()
 {
 }
 
-void S01Main::init()
+void S01_Tutorial::init()
 {
 	m_Camera.setDistance(3000.f);
 	m_Camera.setPerspective(45.f, 0.125f, 7'000.f);
@@ -31,18 +31,18 @@ void S01Main::init()
 	s = 0;
 }
 
-void S01Main::exit()
+void S01_Tutorial::exit()
 {
 	m_Plane.move(0.f, 700.f, 0.f);
 	m_Sphere.move(0.f, 500.f, 0.f);
 }
 
-void S01Main::reset()
+void S01_Tutorial::reset()
 {
 
 }
 
-void S01Main::render()
+void S01_Tutorial::render()
 {
 	m_Camera.ready();
 	
@@ -53,12 +53,12 @@ void S01Main::render()
 	m_Sphere.render();
 }
 
-void S01Main::reshape(int w, int h)
+void S01_Tutorial::reshape(int w, int h)
 {
 
 }
 
-void S01Main::keyboard(int key, bool pressed, int x, int y, bool special)
+void S01_Tutorial::keyboard(int key, bool pressed, int x, int y, bool special)
 {
 	if (pressed)
 	{
@@ -91,11 +91,11 @@ void S01Main::keyboard(int key, bool pressed, int x, int y, bool special)
 	}
 }
 
-void S01Main::mouse(int button, bool pressed, int x, int y)
+void S01_Tutorial::mouse(int button, bool pressed, int x, int y)
 {
 }
 
-void S01Main::motion(bool pressed, int x, int y)
+void S01_Tutorial::motion(bool pressed, int x, int y)
 {
 	if (s)
 		m_Camera.rotate(x, 0.f, pressed);
@@ -103,7 +103,7 @@ void S01Main::motion(bool pressed, int x, int y)
 		m_Camera.rotate(0.f, y, pressed);
 }
 
-void S01Main::update(float fDeltaTime)
+void S01_Tutorial::update(float fDeltaTime)
 {
 
 }

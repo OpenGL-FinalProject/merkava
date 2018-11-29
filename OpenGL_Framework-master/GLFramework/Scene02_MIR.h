@@ -6,14 +6,16 @@
 #include "NormalObject.h"
 #include "Camera.h"
 #include "SoundPlayer.h"
+#include "MapData.h"
+#include "Player.h"
 /* ------------ */
 
-class S01Main :
+class Scene02_MIR :
 	public GLScene
 {
 public:
-	S01Main();
-	virtual ~S01Main();
+	Scene02_MIR();
+	virtual ~Scene02_MIR();
 
 	virtual void init();
 	virtual void exit();
@@ -29,8 +31,13 @@ private:
 	float			rX, rY, rZ;
 	int				tX, tY;
 	Camera			m_Camera;
-	NormalObject	m_Plane;
-	NormalObject    m_Sphere;
 
-	bool s;
+	SoundPlayer		MIL;
+	bool			s;
+
+	//
+
+	MapData			Map;
+	Player			P;
+	float			get_time;
 };

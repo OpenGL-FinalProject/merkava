@@ -1,16 +1,16 @@
 #include "stdafx.h"
-#include "Scene01_MIR.h"
+#include "Scene02_MIR.h"
 #include "GLFramework.h"
 
-Scene01_MIR::Scene01_MIR()
+Scene02_MIR::Scene02_MIR()
 {
 }
 
-Scene01_MIR::~Scene01_MIR()
+Scene02_MIR::~Scene02_MIR()
 {
 }
 
-void Scene01_MIR::init()
+void Scene02_MIR::init()
 {
 	m_Camera.setDistance(3000.f);
 	m_Camera.setPerspective(45.f, 0.125f, 7'000.f);
@@ -25,17 +25,17 @@ void Scene01_MIR::init()
 	get_time = 0;
 }
 
-void Scene01_MIR::exit()
+void Scene02_MIR::exit()
 {
 	
 }
 
-void Scene01_MIR::reset()
+void Scene02_MIR::reset()
 {
 
 }
 
-void Scene01_MIR::render()
+void Scene02_MIR::render()
 {
 	m_Camera.ready();
 
@@ -43,12 +43,12 @@ void Scene01_MIR::render()
 	P.render();
 }
 
-void Scene01_MIR::reshape(int w, int h)
+void Scene02_MIR::reshape(int w, int h)
 {
 
 }
 
-void Scene01_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
+void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 {
 	if (pressed)
 	{
@@ -59,11 +59,11 @@ void Scene01_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 	}
 }
 
-void Scene01_MIR::mouse(int button, bool pressed, int x, int y)
+void Scene02_MIR::mouse(int button, bool pressed, int x, int y)
 {
 }
 
-void Scene01_MIR::motion(bool pressed, int x, int y)
+void Scene02_MIR::motion(bool pressed, int x, int y)
 {
 	if (s)
 		m_Camera.rotate(x, 0.f, pressed);
@@ -71,7 +71,7 @@ void Scene01_MIR::motion(bool pressed, int x, int y)
 		m_Camera.rotate(0.f, y, pressed);
 }
 
-void Scene01_MIR::update(float fDeltaTime)
+void Scene02_MIR::update(float fDeltaTime)
 {
 	get_time += fDeltaTime;
 	P.update(fDeltaTime, Map.getPlayerPosition(get_time));

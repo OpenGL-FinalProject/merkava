@@ -108,9 +108,6 @@
     <ClCompile Include="Scene00_Main.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Scene01.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="NormalObject.cpp">
       <Filter>Source Files\Utilities\3D Objects</Filter>
     </ClCompile>
@@ -126,9 +123,6 @@
     <ClCompile Include="Robot.cpp">
       <Filter>Source Files\Utilities\Space and Time</Filter>
     </ClCompile>
-    <ClCompile Include="Scene01_MIR.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="MapData.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
@@ -137,6 +131,12 @@
     </ClCompile>
     <ClCompile Include="Scene00BG.cpp">
       <Filter>Source Files\Utilities\3D Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene02_MIR.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene01_Tutorial.cpp">
+      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -188,9 +188,6 @@
     <ClInclude Include="Scene00_Main.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Scene01.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="NormalObject.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
@@ -206,16 +203,19 @@
     <ClInclude Include="Robot.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Scene01_MIR.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="MapData.h">
       <Filter>Header Files\Map</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
-    <ClInclude Include="Scene00BG.h">
+    <ClInclude Include="Scene02_MIR.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene01_Tutorial.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene00_BG.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
   </ItemGroup>

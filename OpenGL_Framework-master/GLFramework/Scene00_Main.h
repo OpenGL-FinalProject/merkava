@@ -5,7 +5,7 @@
 #include "Model.h"
 #include "Object.h"
 #include "Camera.h"
-#include "Scene00BG.h"
+#include "Scene00_BG.h"
 /* ------------ */
 
 class S00Logo :
@@ -32,7 +32,7 @@ private:
 	Camera	   m_Camera;
 	Model      m_Model;
 	Object	   m_Title;
-	Scene00BG  BG;
+	Scene00_BG  BG;
 
 	float      get_time;
 	float      start_button_alpha;

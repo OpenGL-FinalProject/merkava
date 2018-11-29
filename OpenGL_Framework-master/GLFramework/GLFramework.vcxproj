@@ -144,8 +144,8 @@
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scene00BG.cpp" />
     <ClCompile Include="Scene00_Main.cpp" />
-    <ClCompile Include="Scene01.cpp" />
-    <ClCompile Include="Scene01_MIR.cpp" />
+    <ClCompile Include="Scene01_Tutorial.cpp" />
+    <ClCompile Include="Scene02_MIR.cpp" />
     <ClCompile Include="Scene02.cpp" />
     <ClCompile Include="Scene03.cpp" />
     <ClCompile Include="Sound.cpp" />
@@ -171,10 +171,10 @@
     <ClInclude Include="Picking.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Robot.h" />
-    <ClInclude Include="Scene00BG.h" />
+    <ClInclude Include="Scene00_BG.h" />
     <ClInclude Include="Scene00_Main.h" />
-    <ClInclude Include="Scene01.h" />
-    <ClInclude Include="Scene01_MIR.h" />
+    <ClInclude Include="Scene01_Tutorial.h" />
+    <ClInclude Include="Scene02_MIR.h" />
     <ClInclude Include="Scene02.h" />
     <ClInclude Include="Scene03.h" />
     <ClInclude Include="Sound.h" />
