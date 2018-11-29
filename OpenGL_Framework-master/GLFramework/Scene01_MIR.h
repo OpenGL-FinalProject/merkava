@@ -6,6 +6,7 @@
 #include "NormalObject.h"
 #include "Camera.h"
 #include "SoundPlayer.h"
+#include "MapData.h"
 /* ------------ */
 
 class Scene01_MIR :
@@ -30,6 +31,9 @@ private:
 	int				tX, tY;
 	Camera			m_Camera;
 
-	SoundPlayer MIL;
-	bool s;
+	SoundPlayer		MIL;
+	bool			s;
+
+	MapData			Map;
+	float			get_time;
 };

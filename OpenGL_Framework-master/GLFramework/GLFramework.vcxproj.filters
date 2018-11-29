@@ -49,6 +49,12 @@
     <Filter Include="Header Files\Base">
       <UniqueIdentifier>{f27eef74-582d-4df1-ae80-31fc09b42197}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Map">
+      <UniqueIdentifier>{ef6a690c-2804-4c59-b4a5-5c75513e57a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Map">
+      <UniqueIdentifier>{06f00a77-f7c8-4907-bf20-e89f304a0710}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GLFramework.cpp">
@@ -123,6 +129,9 @@
     <ClCompile Include="Scene01_MIR.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="MapData.cpp">
+      <Filter>Source Files\Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -193,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="Scene01_MIR.h">
       <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="MapData.h">
+      <Filter>Header Files\Map</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

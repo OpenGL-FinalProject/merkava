@@ -21,6 +21,8 @@ void Scene01_MIR::init()
 	MIL.selectFolder("Resources");
 
 	MIL.play();
+	Map.init(1);
+	get_time = 0;
 }
 
 void Scene01_MIR::exit()
@@ -36,6 +38,8 @@ void Scene01_MIR::reset()
 void Scene01_MIR::render()
 {
 	m_Camera.ready();
+
+	Map.render();
 }
 
 void Scene01_MIR::reshape(int w, int h)
@@ -68,5 +72,7 @@ void Scene01_MIR::motion(bool pressed, int x, int y)
 
 void Scene01_MIR::update(float fDeltaTime)
 {
+	get_time += fDeltaTime;
 
+	printf("%f", get_time);
 }
