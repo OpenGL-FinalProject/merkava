@@ -130,6 +130,17 @@ float * Vector3::operator&()
 	return &v[0];
 }
 
+bool Vector3::operator==(const Vector3 & other)
+{
+	bool isSame = false;
+	if (x >= other.x-0.2f && x <= other.x + 0.2f 
+		&& y >= other.y - 0.2f && y <= other.y + 0.2f
+		&& z >= other.z - 0.2f && z <= other.z + 0.2f)
+		return true;
+	else
+		return false;
+}
+
 
 /* VECTOR 4 ------------------------------------------------------------------------------------------------------ */
 

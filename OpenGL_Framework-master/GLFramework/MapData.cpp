@@ -13,7 +13,7 @@ MapData::~MapData()
 
 void MapData::init(int stageNum)
 {
-	float tmp[24];
+	float tmp[25];
 	pointNum = 0;
 	distance = 0;
 	patternNum = 0;
@@ -34,7 +34,7 @@ void MapData::init(int stageNum)
 	map_file.open("Pattern\\pattern.txt");
 	while (!map_file.eof())
 	{
-		float tmptime = (60.f / 88.f) * 4.f * patternLineNum + 0.65f;
+		float tmptime = (60.f / 88.f) * 4.f * patternLineNum + 0.56f;
 		int count = 0;
 		map_file >> tmp[0];
 
@@ -114,7 +114,6 @@ void MapData::render()
 		glPushMatrix();
 		{
 			glTranslatef(pattern[i].x, pattern[i].y, pattern[i].z);
-			printf("%f %f %f\n", pattern[i].x, pattern[i].y, pattern[i].z);
 			glutSolidSphere(0.5f, 6, 6);
 		}
 		glPopMatrix();
@@ -138,7 +137,10 @@ Vector3 MapData::getPlayerPosition(float time)
 		if (i + 1 < pointNum)
 		{
 			if (distance < V3::dist(map[i], map[i + 1]))
+			{
+				printf("%d to %d, %.2f %.2f %.2f => %.3f\n", i, i + 1, map[i+1].x, map[i+1].y, map[i+1].z, V3::dist(map[i], map[i+1]));
 				break;
+			}
 			else
 			{
 				distance -= V3::dist(map[i], map[i + 1]);
@@ -151,6 +153,6 @@ Vector3 MapData::getPlayerPosition(float time)
 		}
 	}
 	PointToPointVector = V3::times(V3::normalize(V3::subtract(map[i + 1], map[i])),distance);
-
+	printf("p : %f %f %f\n", V3::add(PointToPointVector, map[i]).x, V3::add(PointToPointVector, map[i]).y, V3::add(PointToPointVector, map[i]).z);
 	return V3::add(PointToPointVector,map[i]);
 }

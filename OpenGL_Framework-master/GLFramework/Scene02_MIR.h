@@ -33,11 +33,13 @@ private:
 	Camera			m_Camera;
 
 	SoundPlayer		MIL;
+	Sound		clap;
 	bool			s;
-
+	bool			pause;
 	//
 
 	MapData			Map;
 	Player			P;
 	float			get_time;
+	int				patternNum;
 };

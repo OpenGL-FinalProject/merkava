@@ -59,6 +59,7 @@ public:
 	float& operator[](size_t idx);
 	float  operator[](size_t idx) const;
 	float* operator&();
+	bool operator==(const Vector3 & other);
 };
 
 class Vector4
@@ -177,7 +178,7 @@ namespace V3
 		return v3Result;
 	}
 
-	inline int dist(const Vector3& lhs, const Vector3& rhs)
+	inline float dist(const Vector3& lhs, const Vector3& rhs)
 	{
 		return sqrt(pow(rhs.x - lhs.x, 2) + pow(rhs.y - lhs.y, 2) + pow(rhs.z - lhs.z, 2));
 	}
