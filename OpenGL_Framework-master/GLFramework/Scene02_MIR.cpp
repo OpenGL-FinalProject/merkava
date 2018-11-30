@@ -18,6 +18,7 @@ void Scene02_MIR::init()
 	m_Camera.setEye(Vector3{ 100.f,100.f,300.f });
 
 	pause = false;
+	coaster = false;
 	
 	MIL.init();
 	clap.init();
@@ -44,8 +45,9 @@ void Scene02_MIR::render()
 {
 	m_Camera.ready();
 
-	Map.render();
-	P.render();
+	Map.render(coaster);
+	if (!coaster)
+		P.render();
 }
 
 void Scene02_MIR::reshape(int w, int h)
@@ -72,6 +74,12 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 				MIL.unpause();
 			}
 			break;
+		case '!':
+			coaster = (coaster + 1) % 2; break;
+			break;
+		case ' ':
+
+			break;
 		}
 	}
 }
@@ -94,15 +102,22 @@ void Scene02_MIR::update(float fDeltaTime)
 	{
 		get_time += fDeltaTime;
 		P.update(fDeltaTime, Map.getPlayerPosition(get_time));
-		//printf("%f %f %f =?= %f %f %f\n",P.Position.x, P.Position.y, P.Position.z, Map.pattern[patternNum].x, Map.pattern[patternNum].y, Map.pattern[patternNum].z);
 		if (P.Position == Map.pattern[patternNum])
 		{
 			printf("clap\n");
 			clap.play(0, false);
 			patternNum++;
 		}
-		m_Camera.setEye(Map.getCameraPosition(get_time));
-		//m_Camera.setEye(Vector3(P.Position.x, P.Position.y, P.Position.z));
-		m_Camera.setTarget(P.Position);
+		if (coaster)
+		{
+			m_Camera.setEye(Map.getPlayerPosition(get_time));
+			m_Camera.setTarget(V3::add(Map.getPlayerPosition(get_time+0.7f),Vector3(0.5f,1.f,1.f)));
+		}
+		else
+		{
+			m_Camera.setEye(Map.getCameraPosition(get_time));
+			m_Camera.setTarget(P.Position);
+		}
+		
 	}
 }

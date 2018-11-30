@@ -13,9 +13,11 @@ public:
 	float patternLineNum;
 
 	void init(int stageNum);
-	void render();
+	void render(bool coaster);
 	Vector3 getCameraPosition(float time);
 	Vector3 getPlayerPosition(float time);
+
+	Vector3 getcoasterPlayerPosition(float time);
 
 	MapData();
 	~MapData();

@@ -36,6 +36,7 @@ private:
 	Sound		clap;
 	bool			s;
 	bool			pause;
+	bool			coaster;
 	//
 
 	MapData			Map;
