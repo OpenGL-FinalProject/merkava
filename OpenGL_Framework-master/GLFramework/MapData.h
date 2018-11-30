@@ -4,8 +4,10 @@
 class MapData
 {
 public:
-	Vector3 map[500] = {};
+	Vector3 map[100] = {};
+	Vector3 camera[100] = {};
 	Vector3 pattern[1000] = {};
+	float savedCameraOffset[3];
 	int pointNum;
 	int patternNum;
 	float patternLineNum;

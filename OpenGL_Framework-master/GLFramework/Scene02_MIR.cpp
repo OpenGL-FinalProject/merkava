@@ -101,8 +101,8 @@ void Scene02_MIR::update(float fDeltaTime)
 			clap.play(0, false);
 			patternNum++;
 		}
-		//m_Camera.setEye(Map.getCameraPosition(get_time));
-		m_Camera.setEye(Vector3(P.Position.x + 50.f, P.Position.y + 50.f, P.Position.z + 50.f));
+		m_Camera.setEye(Map.getCameraPosition(get_time));
+		//m_Camera.setEye(Vector3(P.Position.x, P.Position.y, P.Position.z));
 		m_Camera.setTarget(P.Position);
 	}
 }
