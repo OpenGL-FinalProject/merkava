@@ -29,6 +29,7 @@ void Scene02_MIR::init()
 	Map.init(1);
 	get_time = 0;
 	patternNum = 0;
+
 }
 
 void Scene02_MIR::exit()
@@ -48,6 +49,7 @@ void Scene02_MIR::render()
 	Map.render(coaster);
 	if (!coaster)
 		P.render();
+	
 }
 
 void Scene02_MIR::reshape(int w, int h)
