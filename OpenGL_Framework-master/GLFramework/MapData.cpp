@@ -126,8 +126,10 @@ void MapData::render(bool coaster)
 
 	for (int i = 0; i < patternNum; i++)
 	{
-		if (patternHit[i])
+		if (patternHit[i] == 2)
 			glColor3f(1.f, 0.45f, 0.83f);
+		else if (patternHit[i] == 1)
+			glColor3f(0.2f, 0.9f, 0.1f);
 		else
 			glColor3f(0.f, 0.2f, 0.9f);
 		glPushMatrix();
@@ -236,10 +238,18 @@ bool MapData::clap(Player& P)
 {
 	for (int i = 0; i < patternNum; i++)
 	{
-		if (V3::dist(pattern[i], P.Position) < 1.f)
+		if (patternHit[i] == 0)
 		{
-			patternHit[i] = true;
-			return true;
+			if (V3::dist(pattern[i], P.Position) < 1.f)
+			{
+				patternHit[i] = 2;
+				return true;
+			}
+			else if (V3::dist(pattern[i], P.Position) < 1.5f)
+			{
+				patternHit[i] = 1;
+				return true;
+			}
 		}
 	}
 

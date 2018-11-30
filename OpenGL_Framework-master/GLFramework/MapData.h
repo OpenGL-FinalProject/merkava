@@ -8,7 +8,7 @@ public:
 	Vector3 map[100] = {};
 	Vector3 camera[100] = {};
 	Vector3 pattern[600] = {};
-	bool patternHit[600] = {0};
+	int patternHit[600] = {0};
 	float savedCameraOffset[3];
 	int pointNum;
 	int patternNum;
