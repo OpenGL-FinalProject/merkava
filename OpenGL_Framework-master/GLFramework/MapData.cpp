@@ -124,9 +124,12 @@ void MapData::render(bool coaster)
 	}
 	glEnd();
 
-	glColor3f(0.f, 0.2f, 0.9f);
 	for (int i = 0; i < patternNum; i++)
 	{
+		if (patternHit[i])
+			glColor3f(1.f, 0.45f, 0.83f);
+		else
+			glColor3f(0.f, 0.2f, 0.9f);
 		glPushMatrix();
 		{
 			glTranslatef(pattern[i].x, pattern[i].y, pattern[i].z);
@@ -227,4 +230,18 @@ Vector3 MapData::getcoasterPlayerPosition(float time)
 	PointToPointVector = V3::times(V3::normalize(V3::subtract(map[i + 1], map[i])), distance);
 	//printf("p : %f %f %f\n", V3::add(PointToPointVector, map[i]).x, V3::add(PointToPointVector, map[i]).y, V3::add(PointToPointVector, map[i]).z);
 	return V3::add(PointToPointVector, map[i]);
+}
+
+bool MapData::clap(Player& P)
+{
+	for (int i = 0; i < patternNum; i++)
+	{
+		if (V3::dist(pattern[i], P.Position) < 1.f)
+		{
+			patternHit[i] = true;
+			return true;
+		}
+	}
+
+	return false;
 }

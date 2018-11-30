@@ -78,7 +78,12 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 			coaster = (coaster + 1) % 2; break;
 			break;
 		case ' ':
-
+			if (Map.clap(P))
+			{
+														// note hit
+				printf("clap\n");
+				clap.play(0, false);
+			}
 			break;
 		}
 	}
@@ -104,8 +109,7 @@ void Scene02_MIR::update(float fDeltaTime)
 		P.update(fDeltaTime, Map.getPlayerPosition(get_time));
 		if (P.Position == Map.pattern[patternNum])
 		{
-			printf("clap\n");
-			clap.play(0, false);
+			printf("note\n");
 			patternNum++;
 		}
 		if (coaster)

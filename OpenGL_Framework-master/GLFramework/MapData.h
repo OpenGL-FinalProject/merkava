@@ -1,12 +1,14 @@
 #pragma once
 #include "Transformations.h"
+#include "Player.h"
 
 class MapData
 {
 public:
 	Vector3 map[100] = {};
 	Vector3 camera[100] = {};
-	Vector3 pattern[1000] = {};
+	Vector3 pattern[600] = {};
+	bool patternHit[600] = {0};
 	float savedCameraOffset[3];
 	int pointNum;
 	int patternNum;
@@ -18,6 +20,8 @@ public:
 	Vector3 getPlayerPosition(float time);
 
 	Vector3 getcoasterPlayerPosition(float time);
+
+	bool clap(Player& P);
 
 	MapData();
 	~MapData();
