@@ -49,7 +49,6 @@ void Scene02_MIR::render()
 	Map.render(coaster);
 	if (!coaster)
 		P.render();
-	
 }
 
 void Scene02_MIR::reshape(int w, int h)

@@ -155,7 +155,6 @@ Vector3 MapData::getCameraPosition(float time)
 		{
 			if (distance < V3::dist(camera[i], camera[i + 1]))
 			{
-				//printf("%d to %d, %.2f %.2f %.2f => %.3f\n", i, i + 1, map[i+1].x, map[i+1].y, map[i+1].z, V3::dist(map[i], map[i+1]));
 				break;
 			}
 			else
@@ -170,7 +169,6 @@ Vector3 MapData::getCameraPosition(float time)
 		}
 	}
 	PointToPointVector = V3::times(V3::normalize(V3::subtract(camera[i + 1], camera[i])), distance);
-	//printf("p : %f %f %f\n", V3::add(PointToPointVector, camera[i]).x, V3::add(PointToPointVector, camera[i]).y, V3::add(PointToPointVector, camera[i]).z);
 	return V3::add(PointToPointVector, camera[i]);
 }
 
@@ -185,7 +183,6 @@ Vector3 MapData::getPlayerPosition(float time)
 		{
 			if (distance < V3::dist(map[i], map[i + 1]))
 			{
-				//printf("%d to %d, %.2f %.2f %.2f => %.3f\n", i, i + 1, map[i+1].x, map[i+1].y, map[i+1].z, V3::dist(map[i], map[i+1]));
 				break;
 			}
 			else
@@ -200,38 +197,7 @@ Vector3 MapData::getPlayerPosition(float time)
 		}
 	}
 	PointToPointVector = V3::times(V3::normalize(V3::subtract(map[i + 1], map[i])),distance);
-	//printf("p : %f %f %f\n", V3::add(PointToPointVector, map[i]).x, V3::add(PointToPointVector, map[i]).y, V3::add(PointToPointVector, map[i]).z);
 	return V3::add(PointToPointVector,map[i]);
-}
-
-Vector3 MapData::getcoasterPlayerPosition(float time)
-{
-	distance = time*speed;
-
-	int i = 0;
-	while (true)
-	{
-		if (i + 1 < pointNum)
-		{
-			if (distance < V3::dist(map[i], map[i + 1]))
-			{
-				//printf("%d to %d, %.2f %.2f %.2f => %.3f\n", i, i + 1, map[i+1].x, map[i+1].y, map[i+1].z, V3::dist(map[i], map[i+1]));
-				break;
-			}
-			else
-			{
-				distance -= V3::dist(map[i], map[i + 1]);
-				i++;
-			}
-		}
-		else
-		{
-			return Vector3(0.f, 0.f, 0.f);
-		}
-	}
-	PointToPointVector = V3::times(V3::normalize(V3::subtract(map[i + 1], map[i])), distance);
-	//printf("p : %f %f %f\n", V3::add(PointToPointVector, map[i]).x, V3::add(PointToPointVector, map[i]).y, V3::add(PointToPointVector, map[i]).z);
-	return V3::add(PointToPointVector, map[i]);
 }
 
 bool MapData::clap(Player& P)
