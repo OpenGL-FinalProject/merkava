@@ -49,6 +49,7 @@ void Scene02_MIR::render()
 	Map.render(coaster);
 	if (!coaster)
 		P.render();
+	hit_effect.render();
 }
 
 void Scene02_MIR::reshape(int w, int h)
@@ -83,8 +84,10 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 			{
 														// note hit
 				printf("clap\n");
+				hit_effect.create_cube_set(Map.closest_pattern(P));
 				clap.play(0, false);
 			}
+			P.hit();
 			break;
 		}
 	}
@@ -108,6 +111,7 @@ void Scene02_MIR::update(float fDeltaTime)
 	{
 		get_time += fDeltaTime;
 		P.update(fDeltaTime, Map.getPlayerPosition(get_time));
+		hit_effect.update(fDeltaTime);
 		if (P.Position == Map.pattern[patternNum])
 		{
 			printf("note\n");

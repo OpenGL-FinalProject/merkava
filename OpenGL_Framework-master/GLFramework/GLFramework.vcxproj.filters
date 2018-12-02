@@ -138,6 +138,9 @@
     <ClCompile Include="Scene01_Tutorial.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="HitEffect.cpp">
+      <Filter>Source Files\Utilities\3D Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -216,6 +219,9 @@
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="Scene00_BG.h">
+      <Filter>Header Files\Utilities\3D Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="HitEffect.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
   </ItemGroup>

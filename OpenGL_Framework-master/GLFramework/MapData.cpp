@@ -115,6 +115,7 @@ void MapData::init(int stageNum)
 
 void MapData::render(bool coaster)
 {
+	glColor3f(1.f, 1.f, 1.f);
 	glBegin(GL_LINE_STRIP);
 	{
 		for (int i = 0; i < pointNum; i++)
@@ -221,3 +222,28 @@ bool MapData::clap(Player& P)
 
 	return false;
 }
+
+//위에 clap함수 부르고 그 다음에 바로 불러야 제대로 작동
+Vector3 MapData::closest_pattern(Player& P)
+{
+	Vector3 temp_pattern;
+	float temp_pattern_dist = -1;
+
+	for (int i = 0; i < patternNum; i++)
+	{
+			if (temp_pattern_dist < 0)
+			{
+				temp_pattern = pattern[i];
+				temp_pattern_dist = V3::dist(pattern[i], P.Position);
+				continue;
+			}
+
+			if (V3::dist(pattern[i], P.Position) < temp_pattern_dist)
+			{
+				temp_pattern = pattern[i];
+				temp_pattern_dist = V3::dist(pattern[i], P.Position);
+			}
+	}
+	return temp_pattern;
+}
+

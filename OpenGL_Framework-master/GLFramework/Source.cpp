@@ -11,6 +11,8 @@ GLFramework fw("Merkava");
 
 int main(int argc, char* argv[])
 {
+	srand(GetTickCount());
+
 	fw.init(argc, argv, DEF_WIN_WIDTH, DEF_WIN_HEIGHT); //√ ±‚»≠
 
 	fw.regDrawFunction([]() { fw.draw(); });

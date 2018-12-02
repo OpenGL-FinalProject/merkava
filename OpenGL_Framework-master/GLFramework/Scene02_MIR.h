@@ -9,6 +9,7 @@
 #include "SoundPlayer.h"
 #include "MapData.h"
 #include "Player.h"
+#include "HitEffect.h"
 /* ------------ */
 
 class Scene02_MIR :
@@ -42,6 +43,7 @@ private:
 
 	MapData			Map;
 	Player			P;
+	HitEffect       hit_effect;
 	float			get_time;
 	int				patternNum;
 };

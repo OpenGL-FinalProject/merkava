@@ -1,6 +1,7 @@
 #pragma once
 #include "Transformations.h"
 #include "Player.h"
+#include <vector>
 
 class MapData
 {
@@ -22,6 +23,7 @@ public:
 	Vector3 getcoasterPlayerPosition(float time);
 
 	bool clap(Player& P);
+	Vector3 closest_pattern(Player& P);
 
 	MapData();
 	~MapData();
@@ -29,6 +31,8 @@ public:
 	float speed;			//한 박에 10씩 이동합니다
 	float distance;
 	Vector3 PointToPointVector;
+
+	
 
 	std::ifstream map_file;
 };
