@@ -3,9 +3,12 @@
 #include "Player.h"
 #include <vector>
 
+
+
 class MapData
 {
 public:
+
 	Vector3 map[100] = {};
 	Vector3 camera[100] = {};
 	Vector3 pattern[600] = {};
@@ -22,8 +25,15 @@ public:
 
 	Vector3 getcoasterPlayerPosition(float time);
 
-	bool clap(Player& P);
-	Vector3 closest_pattern(Player& P);
+	typedef struct clap_check
+	{
+		bool is_hit;
+		Vector3 pattern;
+		int patternHit;
+	};
+
+	clap_check clap(Player& P);
+
 
 	MapData();
 	~MapData();

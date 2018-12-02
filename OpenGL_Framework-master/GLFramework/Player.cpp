@@ -32,7 +32,7 @@ void Player::update(float fDeltaTime,Vector3 playerPosition)
 				hit_animation_max_size = std_hit_animation_max_size;
 		}
 		else if (hit_animation_max_size < hit_animation_cur_size)
-		{
+		{	
 			if(hit_animation_dir>0)//안해두면 가끔 무한루프 돌음
 			hit_animation_dir = -hit_animation_dir;
 		}

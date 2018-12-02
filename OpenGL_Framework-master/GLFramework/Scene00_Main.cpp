@@ -6,15 +6,15 @@
 #include <math.h>
 
 
-S00Logo::S00Logo()
+S00_Logo::S00_Logo()
 {
 }
 
-S00Logo::~S00Logo()
+S00_Logo::~S00_Logo()
 {
 }
 
-void S00Logo::init()
+void S00_Logo::init()
 {
 
 	m_Camera.setDistance(200.f);
@@ -23,15 +23,15 @@ void S00Logo::init()
 
 }
 
-void S00Logo::exit()
+void S00_Logo::exit()
 {
 }
 
-void S00Logo::reset()
+void S00_Logo::reset()
 {
 }
 
-void S00Logo::render()
+void S00_Logo::render()
 {
 	m_Camera.ready();
 
@@ -41,12 +41,12 @@ void S00Logo::render()
 	           																			
 }
 
-void S00Logo::reshape(int w, int h)
+void S00_Logo::reshape(int w, int h)
 {
 
 }
 
-void S00Logo::keyboard(int key, bool pressed, int x, int y, bool special)
+void S00_Logo::keyboard(int key, bool pressed, int x, int y, bool special)
 {
 	if (pressed)
 		switch (key)
@@ -59,15 +59,15 @@ void S00Logo::keyboard(int key, bool pressed, int x, int y, bool special)
 		
 }
 
-void S00Logo::mouse(int button, bool pressed, int x, int y)
+void S00_Logo::mouse(int button, bool pressed, int x, int y)
 {
 }
 
-void S00Logo::motion(bool pressed, int x, int y)
+void S00_Logo::motion(bool pressed, int x, int y)
 {
 }
 
-void S00Logo::update(float fDeltaTime)
+void S00_Logo::update(float fDeltaTime)
 {
 	BG.update(fDeltaTime);
 	get_time += fDeltaTime;

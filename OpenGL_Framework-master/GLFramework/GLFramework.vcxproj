@@ -145,7 +145,7 @@
     <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scene00BG.cpp" />
     <ClCompile Include="Scene00_Main.cpp" />
-    <ClCompile Include="Scene01_Tutorial.cpp" />
+    <ClCompile Include="Scene01_Music_Selection.cpp" />
     <ClCompile Include="Scene02_MIR.cpp" />
     <ClCompile Include="Scene02.cpp" />
     <ClCompile Include="Scene03.cpp" />
@@ -175,7 +175,7 @@
     <ClInclude Include="Robot.h" />
     <ClInclude Include="Scene00_BG.h" />
     <ClInclude Include="Scene00_Main.h" />
-    <ClInclude Include="Scene01_Tutorial.h" />
+    <ClInclude Include="Scene01_Music_Selection.h" />
     <ClInclude Include="Scene02_MIR.h" />
     <ClInclude Include="Scene02.h" />
     <ClInclude Include="Scene03.h" />

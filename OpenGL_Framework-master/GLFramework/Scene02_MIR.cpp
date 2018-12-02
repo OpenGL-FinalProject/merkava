@@ -80,11 +80,12 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 			coaster = (coaster + 1) % 2; break;
 			break;
 		case ' ':
-			if (Map.clap(P))
+			auto temp_clap = Map.clap(P);
+			if (temp_clap.is_hit)
 			{
-														// note hit
+								// note hit
 				printf("clap\n");
-				hit_effect.create_cube_set(Map.closest_pattern(P));
+				hit_effect.create_cube_set(temp_clap.pattern, temp_clap.patternHit);
 				clap.play(0, false);
 			}
 			P.hit();

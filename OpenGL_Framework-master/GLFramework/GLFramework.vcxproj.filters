@@ -135,11 +135,11 @@
     <ClCompile Include="Scene02_MIR.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="Scene01_Tutorial.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="HitEffect.cpp">
       <Filter>Source Files\Utilities\3D Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene01_Music_Selection.cpp">
+      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -215,14 +215,14 @@
     <ClInclude Include="Scene02_MIR.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="Scene01_Tutorial.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="Scene00_BG.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
     <ClInclude Include="HitEffect.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene01_Music_Selection.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

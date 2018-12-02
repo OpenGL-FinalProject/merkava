@@ -8,12 +8,12 @@
 #include "Scene00_BG.h"
 /* ------------ */
 
-class S00Logo :
+class S00_Logo :
 	public GLScene
 {
 public:
-	S00Logo();
-	virtual ~S00Logo();
+	S00_Logo();
+	virtual ~S00_Logo();
 
 	virtual void init();
 	virtual void exit();

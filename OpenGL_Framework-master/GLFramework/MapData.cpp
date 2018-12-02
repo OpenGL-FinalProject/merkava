@@ -202,51 +202,44 @@ Vector3 MapData::getPlayerPosition(float time)
 	return V3::add(PointToPointVector,map[i]);
 }
 
-bool MapData::clap(Player& P)
+MapData::clap_check MapData::clap(Player& P)
 {
+	//가장 가까운 노드 - 못쳤을 때 못친 노트 반환용 
+	Vector3 temp_closest_pattern;
+	float temp_closest_pattern_dist = -1;
+
 	for (int i = 0; i < patternNum; i++)
 	{
+		
 		if (patternHit[i] == 0)
 		{
 			if (V3::dist(pattern[i], P.Position) < 1.f)
 			{
 				perfect_num++;
 				patternHit[i] = 2;
-				return true;
+				return clap_check{true, pattern[i], patternHit[i]};
 			}
 			else if (V3::dist(pattern[i], P.Position) < 1.5f)
 			{
 				good_num++;
 				patternHit[i] = 1;
-				return true;
+				return clap_check{ true, pattern[i], patternHit[i] };
 			}
+		}
+		if (temp_closest_pattern_dist < 0)
+		{
+			temp_closest_pattern = pattern[i];
+			temp_closest_pattern_dist = V3::dist(pattern[i], P.Position);
+		}
+
+		if (V3::dist(pattern[i], P.Position) < temp_closest_pattern_dist)
+		{
+			temp_closest_pattern = pattern[i];
+			temp_closest_pattern_dist = V3::dist(pattern[i], P.Position);
 		}
 	}
 
-	return false;
+	return clap_check{ false, temp_closest_pattern, 0 };
 }
 
-//위에 clap함수 부르고 그 다음에 바로 불러야 제대로 작동
-Vector3 MapData::closest_pattern(Player& P)
-{
-	Vector3 temp_pattern;
-	float temp_pattern_dist = -1;
-
-	for (int i = 0; i < patternNum; i++)
-	{
-			if (temp_pattern_dist < 0)
-			{
-				temp_pattern = pattern[i];
-				temp_pattern_dist = V3::dist(pattern[i], P.Position);
-				continue;
-			}
-
-			if (V3::dist(pattern[i], P.Position) < temp_pattern_dist)
-			{
-				temp_pattern = pattern[i];
-				temp_pattern_dist = V3::dist(pattern[i], P.Position);
-			}
-	}
-	return temp_pattern;
-}
 

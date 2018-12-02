@@ -8,12 +8,12 @@
 #include "SoundPlayer.h"
 /* ------------ */
 
-class S01_Tutorial :
+class S01_MusicSelection :
 	public GLScene
 {
 public:
-	S01_Tutorial();
-	virtual ~S01_Tutorial();
+	S01_MusicSelection();
+	virtual ~S01_MusicSelection();
 
 	virtual void init();
 	virtual void exit();
