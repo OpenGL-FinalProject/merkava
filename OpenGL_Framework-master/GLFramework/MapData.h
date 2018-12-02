@@ -32,6 +32,12 @@ public:
 	float distance;
 	Vector3 PointToPointVector;
 
+	//결과
+	int perfect_num;
+	int good_num;
+	//놓친걸 어떻게 세는 것이 가장 좋은 방법일까
+	int miss_num;
+
 	
 
 	std::ifstream map_file;

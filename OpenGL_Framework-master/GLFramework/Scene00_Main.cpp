@@ -37,7 +37,7 @@ void S00Logo::render()
 
 	BG.render();
 	
-	print("Press any key to start",8 , -30, 100,1.f,1.f,1.f, start_button_alpha); //현재 x,y값 상수 
+	print("Press s to start",6 , -30, 100,1.f,1.f,1.f, start_button_alpha); //현재 x,y값 상수 
 	           																			
 }
 

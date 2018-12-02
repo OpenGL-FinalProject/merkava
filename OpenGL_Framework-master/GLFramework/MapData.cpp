@@ -111,6 +111,7 @@ void MapData::init(int stageNum)
 		patternLineNum += 1.f;
 	}
 	map_file.close();
+
 }
 
 void MapData::render(bool coaster)
@@ -209,11 +210,13 @@ bool MapData::clap(Player& P)
 		{
 			if (V3::dist(pattern[i], P.Position) < 1.f)
 			{
+				perfect_num++;
 				patternHit[i] = 2;
 				return true;
 			}
 			else if (V3::dist(pattern[i], P.Position) < 1.5f)
 			{
+				good_num++;
 				patternHit[i] = 1;
 				return true;
 			}
