@@ -177,6 +177,7 @@ void MapData::drawArrowNote(Vector3 getCurrentLineVec, Vector3* Camera_worldspac
 	Vector3 Vectorworld = Camera_worldspace[0];
 	Vector3 Vectorup = Camera_worldspace[1];
 
+
 	Vector3 Vec_cross_lline_look = V3::normalize(V3::cross(getCurrentLineVec, Vec_look));
 
 	if (V3::dot(getCurrentLineVec, Vec_look) < 0)

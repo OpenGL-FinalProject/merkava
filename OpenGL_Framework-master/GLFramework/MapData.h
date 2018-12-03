@@ -18,6 +18,7 @@ public:
 	int patternNum;
 	float patternLineNum;
 
+
 	void init(int stageNum);
 	void render(bool coaster, float time, Vector3* Camera_worldspace, Vector3* axis);
 	void drawBillboardCircle(float size, Vector3* Camera_worldspace);
