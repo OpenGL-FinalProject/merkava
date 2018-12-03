@@ -19,10 +19,12 @@ public:
 	float patternLineNum;
 
 	void init(int stageNum);
-	void render(bool coaster, float time, Vector3* Camera_worldspace);
+	void render(bool coaster, float time, Vector3* Camera_worldspace, Vector3* axis);
 	void drawBillboardCircle(float size, Vector3* Camera_worldspace);
+	void drawArrowNote(Vector3 CurrentLineVec, Vector3* Camera_worldspace, Vector3 Vec_look);
 	Vector3 getCameraPosition(float time);
 	Vector3 getPlayerPosition(float time);
+	Vector3 getCurrentLineVector(float time);
 
 
 	typedef struct clap_check

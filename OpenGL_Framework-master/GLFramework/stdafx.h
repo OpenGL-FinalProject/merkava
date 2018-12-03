@@ -14,6 +14,7 @@
 #include <vector>
 #include <map>
 #include <math.h>
+#define _USE_MATH_DEFINES
 
 /* FMOD */
 #include "Dependencies/FMOD/include/fmod.hpp"

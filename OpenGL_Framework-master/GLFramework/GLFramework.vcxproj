@@ -129,6 +129,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AirPlane.cpp" />
+    <ClCompile Include="ArrowNode.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="FolderReader.cpp" />
     <ClCompile Include="GLFramework.cpp" />
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AirPlane.h" />
+    <ClInclude Include="ArrowNode.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="FolderReader.h" />
     <ClInclude Include="GLFramework.h" />

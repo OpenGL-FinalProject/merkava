@@ -48,7 +48,7 @@ void Scene02_MIR::render()
 {
 	m_Camera.ready();
 
-	Map.render(coaster,get_time, Camera_worldspace);
+	Map.render(coaster,get_time, Camera_worldspace, axis);
 	if (!coaster)
 		P.render();
 	hit_effect.render();
