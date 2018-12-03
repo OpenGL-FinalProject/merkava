@@ -33,9 +33,11 @@ private:
 	float			rX, rY, rZ;
 	int				tX, tY;
 	Camera			m_Camera;
+	Vector3			axis[3];
+	Vector3			Camera_worldspace[2];
 
 	SoundPlayer		MIL;
-	Sound		clap;
+	Sound			clap;
 	bool			s;
 	bool			pause;
 	bool			coaster;

@@ -59,9 +59,10 @@ void MapData::init(int stageNum)
 			map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4] >> tmp[5] >> tmp[6] >> tmp[7];
 			for (float i = 0.f; i < 8.f; i += 1.f)
 			{
-				if (tmp[int(i)] == 1)
+				if (tmp[int(i)] >= 1)
 				{
-					pattern[patternNum + count] = getPlayerPosition(tmptime + (60.f / 88.f)*i/2.f);
+					pattern[patternNum + count] = getPlayerPosition(tmptime + (60.f / 88.f)*i / 2.f);
+					patternTime[patternNum + count] = tmptime + (60.f / 88.f)*i / 2.f;
 					count++;
 				}
 			}
@@ -71,9 +72,10 @@ void MapData::init(int stageNum)
 			map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4] >> tmp[5] >> tmp[6] >> tmp[7] >> tmp[8] >> tmp[9] >> tmp[10] >> tmp[11];
 			for (float i = 0.f; i < 12.f; i += 1.f)
 			{
-				if (tmp[int(i)] == 1)
+				if (tmp[int(i)] >= 1)
 				{
-					pattern[patternNum + count] = getPlayerPosition(tmptime + (60.f / 88.f)*i/3.f);
+					pattern[patternNum + count] = getPlayerPosition(tmptime + (60.f / 88.f)*i / 3.f);
+					patternTime[patternNum + count] = tmptime + (60.f / 88.f)*i / 3.f;
 					count++;
 				}
 			}
@@ -83,9 +85,10 @@ void MapData::init(int stageNum)
 			map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4] >> tmp[5] >> tmp[6] >> tmp[7] >> tmp[8] >> tmp[9] >> tmp[10] >> tmp[11] >> tmp[12] >> tmp[13] >> tmp[14] >> tmp[15];
 			for (float i = 0.f; i < 16.f; i += 1.f)
 			{
-				if (tmp[int(i)] == 1)
+				if (tmp[int(i)] >= 1)
 				{
-					pattern[patternNum + count] = getPlayerPosition(tmptime + (60.f / 88.f)*i/4.f);
+					pattern[patternNum + count] = getPlayerPosition(tmptime + (60.f / 88.f)*i / 4.f);
+					patternTime[patternNum + count] = tmptime + (60.f / 88.f)*i / 4.f;
 					count++;
 				}
 			}
@@ -95,13 +98,14 @@ void MapData::init(int stageNum)
 			map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4] >> tmp[5] >> tmp[6] >> tmp[7] >> tmp[8] >> tmp[9] >> tmp[10] >> tmp[11] >> tmp[12] >> tmp[13] >> tmp[14] >> tmp[15] >> tmp[16] >> tmp[17] >> tmp[18] >> tmp[19] >> tmp[20] >> tmp[21] >> tmp[22] >> tmp[23];
 			for (float i = 0.f; i < 24.f; i += 1.f)
 			{
-				if (tmp[int(i)] == 1)
+				if (tmp[int(i)] >= 1)
 				{
 					pattern[patternNum + count] = getPlayerPosition(tmptime + (60.f / 88.f)*i / 6.f);
+					patternTime[patternNum + count] = tmptime + (60.f / 88.f)*i / 6.f;
 					count++;
 				}
 			}
-			
+
 		}
 		else
 		{
@@ -114,7 +118,7 @@ void MapData::init(int stageNum)
 
 }
 
-void MapData::render(bool coaster)
+void MapData::render(bool coaster, float time,Vector3* Camera_worldspace)
 {
 	glColor3f(1.f, 1.f, 1.f);
 	glBegin(GL_LINE_STRIP);
@@ -134,6 +138,7 @@ void MapData::render(bool coaster)
 			glColor3f(0.2f, 0.9f, 0.1f);
 		else
 			glColor3f(0.f, 0.2f, 0.9f);
+
 		glPushMatrix();
 		{
 			glTranslatef(pattern[i].x, pattern[i].y, pattern[i].z);
@@ -141,10 +146,32 @@ void MapData::render(bool coaster)
 				glutWireCube(0.5f);
 			else
 				glutSolidSphere(0.5f, 6, 6);
-		}
-		glPopMatrix();
+			if (patternTime[i] - time < 0.7f && patternTime[i] - time > 0.f)
+			{
+				if (coaster)
+					drawBillboardCircle((patternTime[i] - time) + 0.2f, Camera_worldspace);
+				else
+					drawBillboardCircle((patternTime[i] - time) * 3.2f + 0.8f, Camera_worldspace);
+			}
+		}glPopMatrix();
+
+
 	}
 	glColor3f(1.f, 1.f, 1.f);
+}
+
+void MapData::drawBillboardCircle(float size, Vector3* Camera_worldspace)
+{
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glBegin(GL_LINE_STRIP);
+	for (int i = 0; i < 31; i++)
+	{
+		Vector3 Vectorworld = V3::tmp_times(Camera_worldspace[0], cos(i*3.14f*6.f / 90.f) * size);
+		Vector3 Vectorup = V3::tmp_times(Camera_worldspace[1], sin(i*3.14f*6.f / 90.f) * size);
+	
+		glVertex3f(Vectorworld.x + Vectorup.x, Vectorworld.y + Vectorup.y, Vectorworld.z + Vectorup.z);
+	}
+	glEnd();
 }
 
 Vector3 MapData::getCameraPosition(float time)
@@ -198,8 +225,8 @@ Vector3 MapData::getPlayerPosition(float time)
 			return Vector3(0.f, 0.f, 0.f);
 		}
 	}
-	PointToPointVector = V3::times(V3::normalize(V3::subtract(map[i + 1], map[i])),distance);
-	return V3::add(PointToPointVector,map[i]);
+	PointToPointVector = V3::times(V3::normalize(V3::subtract(map[i + 1], map[i])), distance);
+	return V3::add(PointToPointVector, map[i]);
 }
 
 MapData::clap_check MapData::clap(Player& P)
@@ -210,14 +237,14 @@ MapData::clap_check MapData::clap(Player& P)
 
 	for (int i = 0; i < patternNum; i++)
 	{
-		
+
 		if (patternHit[i] == 0)
 		{
 			if (V3::dist(pattern[i], P.Position) < 1.f)
 			{
 				perfect_num++;
 				patternHit[i] = 2;
-				return clap_check{true, pattern[i], patternHit[i]};
+				return clap_check{ true, pattern[i], patternHit[i] };
 			}
 			else if (V3::dist(pattern[i], P.Position) < 1.5f)
 			{

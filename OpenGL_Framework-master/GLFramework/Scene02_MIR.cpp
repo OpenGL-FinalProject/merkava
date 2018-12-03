@@ -46,7 +46,7 @@ void Scene02_MIR::render()
 {
 	m_Camera.ready();
 
-	Map.render(coaster);
+	Map.render(coaster,get_time, Camera_worldspace);
 	if (!coaster)
 		P.render();
 	hit_effect.render();
@@ -130,4 +130,11 @@ void Scene02_MIR::update(float fDeltaTime)
 		}
 		
 	}
+	axis[2] = V3::normalize(m_Camera.getLook());
+	axis[0] = V3::normalize(m_Camera.getRight());
+	axis[1] = V3::cross(axis[2], axis[0]);
+
+	Camera_worldspace[0] = V3::normalize(axis[0]);
+	Camera_worldspace[1] = V3::normalize(axis[1]);
+
 }

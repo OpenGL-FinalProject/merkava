@@ -207,6 +207,15 @@ namespace V3
 		v3Result.z = v3Vector.z * length;
 		return v3Result;
 	}
+
+	inline Vector3 tmp_times(const Vector3 v3Vector, float length)
+	{
+		Vector3 v3Result;
+		v3Result.x = v3Vector.x * length;
+		v3Result.y = v3Vector.y * length;
+		v3Result.z = v3Vector.z * length;
+		return v3Result;
+	}
 }
 
 namespace V4

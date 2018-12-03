@@ -4,7 +4,6 @@
 #include <vector>
 
 
-
 class MapData
 {
 public:
@@ -13,17 +12,18 @@ public:
 	Vector3 camera[100] = {};
 	Vector3 pattern[600] = {};
 	int patternHit[600] = {0};
+	float patternTime[600] = {0};
 	float savedCameraOffset[3];
 	int pointNum;
 	int patternNum;
 	float patternLineNum;
 
 	void init(int stageNum);
-	void render(bool coaster);
+	void render(bool coaster, float time, Vector3* Camera_worldspace);
+	void drawBillboardCircle(float size, Vector3* Camera_worldspace);
 	Vector3 getCameraPosition(float time);
 	Vector3 getPlayerPosition(float time);
 
-	Vector3 getcoasterPlayerPosition(float time);
 
 	typedef struct clap_check
 	{
@@ -33,7 +33,6 @@ public:
 	};
 
 	clap_check clap(Player& P);
-
 
 	MapData();
 	~MapData();
