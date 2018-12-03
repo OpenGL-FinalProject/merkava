@@ -16,11 +16,11 @@ HitEffect::~HitEffect()
 void HitEffect::create_cube_set(const Vector3& _pattern_hit_pos, const int& patternHit)
 {
 	//patternHit.2 == perfect   patternHit.1 == good
-	//patternHit.perfect - particle 4*4*4   patternHit.good - particle 2*2*2
+	//patternHit.perfect - particle 3*3*3   patternHit.good - particle 2*2*2
 	int particle_num_for_each_axis;
 
 	if (patternHit == 2)
-		particle_num_for_each_axis = 4;
+		particle_num_for_each_axis = 3;
 	else if(patternHit==1)
 		particle_num_for_each_axis = 2;
 	// particle_num_for_each_axis = patternHit + 2;
@@ -68,8 +68,6 @@ void HitEffect::create_cube_set(const Vector3& _pattern_hit_pos, const int& patt
 
 void HitEffect::update(float fDeltaTime)
 {
-	//재귀 싫어요
-	//하드 코딩 체고오오
 	for (int i = 0; i < hit_effect_cube_sets.size(); i++)
 	{
 		if (hit_effect_cube_sets[i]->hit_effect_cubes.size() == 0)
@@ -97,8 +95,6 @@ void HitEffect::update(float fDeltaTime)
 
 void HitEffect::render()
 {
-	//재귀 싫어요
-	//하드 코딩 체고오오.. 인데 슬슬 양심에 찔린다
 	float temp_speed_offset;
 	for (int i = 0; i < hit_effect_cube_sets.size(); i++)
 	{
