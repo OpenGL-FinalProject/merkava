@@ -7,8 +7,10 @@ public:
 	~IngameUI();
 
 	void init();
-	void render(float time, Vector3* Camera_worldspace);
+	void render(Vector3 CameraPosition, Vector3 * Camera_worldspace, float dist);
 	void update();
 
+	Vector3 Vectorworld;
+	Vector3 Vectorup;
 };
 

@@ -18,7 +18,6 @@ S00_Logo::~S00_Logo()
 
 void S00_Logo::init()
 {
-
 	m_Camera.setDistance(200.f);
 	m_Camera.setPerspective(60.f, 0.125f, 3500.f);
 	m_Camera.setSensitivity(1.f);
@@ -85,7 +84,7 @@ void S00_Logo::update(float fDeltaTime)
 		start_button_alpha = sin((1-elapsed_time_since_scene_change_started)*M_PI / (time_to_change_scene));
 	}
 
-	if(elapsed_time_since_scene_change_started>= time_to_change_scene)
+	if(elapsed_time_since_scene_change_started >= time_to_change_scene + 1.0f)
 		m_Framework->toScene("Made In Love"); 
 	
 }

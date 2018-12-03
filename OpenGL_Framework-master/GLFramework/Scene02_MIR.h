@@ -54,4 +54,5 @@ private:
 	//
 
 	IngameUI		UI;
+	Vector3			UIPosition;
 };

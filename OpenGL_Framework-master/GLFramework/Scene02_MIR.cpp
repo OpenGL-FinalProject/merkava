@@ -53,7 +53,9 @@ void Scene02_MIR::render()
 		P.render();
 	hit_effect.render();
 
-	UI.render(get_time, Camera_worldspace);
+	UIPosition = V3::add(Map.getCameraPosition(get_time), V3::subtract(P.Position, Map.getCameraPosition(get_time)));
+	//printf("%f %f = %f\n", P.Position.x, Map.getCameraPosition(get_time).x, V3::dist(P.Position, Map.getCameraPosition(get_time)));
+	UI.render(UIPosition, Camera_worldspace, V3::dist(P.Position, Map.getCameraPosition(get_time)));
 }
 
 void Scene02_MIR::reshape(int w, int h)
@@ -117,9 +119,15 @@ void Scene02_MIR::mouse(int button, bool pressed, int x, int y)
 void Scene02_MIR::motion(bool pressed, int x, int y)
 {
 	if (s)
+	{
 		m_Camera.rotate(x, 0.f, pressed);
+		m_Camera.setTarget(P.Position);
+	}
 	else
+	{
 		m_Camera.rotate(0.f, y, pressed);
+		m_Camera.setTarget(P.Position);
+	}
 }
 
 void Scene02_MIR::update(float fDeltaTime)
