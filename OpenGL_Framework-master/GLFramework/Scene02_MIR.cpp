@@ -53,7 +53,7 @@ void Scene02_MIR::render()
 		P.render();
 	hit_effect.render();
 
-	UI.render();
+	UI.render(get_time, Camera_worldspace);
 }
 
 void Scene02_MIR::reshape(int w, int h)
