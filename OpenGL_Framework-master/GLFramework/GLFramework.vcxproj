@@ -135,6 +135,7 @@
     <ClCompile Include="GLScene.cpp" />
     <ClCompile Include="GLScenesInfo.cpp" />
     <ClCompile Include="HitEffect.cpp" />
+    <ClCompile Include="IngameUI.cpp" />
     <ClCompile Include="LinearMath.cpp" />
     <ClCompile Include="MapData.cpp" />
     <ClCompile Include="Model.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="GLScene.h" />
     <ClInclude Include="GLScenesInfo.h" />
     <ClInclude Include="HitEffect.h" />
+    <ClInclude Include="IngameUI.h" />
     <ClInclude Include="LinearMath.h" />
     <ClInclude Include="MapData.h" />
     <ClInclude Include="Model.h" />

@@ -154,8 +154,6 @@ void MapData::render(bool coaster, float time,Vector3* Camera_worldspace)
 					drawBillboardCircle((patternTime[i] - time) * 3.2f + 0.8f, Camera_worldspace);
 			}
 		}glPopMatrix();
-
-
 	}
 	glColor3f(1.f, 1.f, 1.f);
 }
@@ -166,8 +164,8 @@ void MapData::drawBillboardCircle(float size, Vector3* Camera_worldspace)
 	glBegin(GL_LINE_STRIP);
 	for (int i = 0; i < 31; i++)
 	{
-		Vector3 Vectorworld = V3::tmp_times(Camera_worldspace[0], cos(i*3.14f*6.f / 90.f) * size);
-		Vector3 Vectorup = V3::tmp_times(Camera_worldspace[1], sin(i*3.14f*6.f / 90.f) * size);
+		Vector3 Vectorworld = V3::times(Camera_worldspace[0], cos(i*3.14f*6.f / 90.f) * size);
+		Vector3 Vectorup = V3::times(Camera_worldspace[1], sin(i*3.14f*6.f / 90.f) * size);
 	
 		glVertex3f(Vectorworld.x + Vectorup.x, Vectorworld.y + Vectorup.y, Vectorworld.z + Vectorup.z);
 	}

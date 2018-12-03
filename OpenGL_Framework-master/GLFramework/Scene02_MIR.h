@@ -10,6 +10,7 @@
 #include "MapData.h"
 #include "Player.h"
 #include "HitEffect.h"
+#include "IngameUI.h"
 /* ------------ */
 
 class Scene02_MIR :
@@ -35,10 +36,12 @@ private:
 	Camera			m_Camera;
 	Vector3			axis[3];
 	Vector3			Camera_worldspace[2];
+	//
 
 	SoundPlayer		MIL;
 	Sound			clap;
 	bool			s;
+	bool			spaceKeydown;
 	bool			pause;
 	bool			coaster;
 	//
@@ -48,4 +51,7 @@ private:
 	HitEffect       hit_effect;
 	float			get_time;
 	int				patternNum;
+	//
+
+	IngameUI		UI;
 };

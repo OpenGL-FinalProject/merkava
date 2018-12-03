@@ -19,9 +19,11 @@ void Scene02_MIR::init()
 
 	pause = false;
 	coaster = false;
+	spaceKeydown = false;
 	
 	MIL.init();
 	clap.init();
+	UI.init();
 	MIL.selectFolder("Resources");
 	clap.addSound("FX\\clap.mp3", true);
 
@@ -50,6 +52,8 @@ void Scene02_MIR::render()
 	if (!coaster)
 		P.render();
 	hit_effect.render();
+
+	UI.render();
 }
 
 void Scene02_MIR::reshape(int w, int h)
@@ -80,16 +84,28 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 			coaster = (coaster + 1) % 2; break;
 			break;
 		case ' ':
-			auto temp_clap = Map.clap(P);
-			if (temp_clap.is_hit)
+			if (!spaceKeydown)
 			{
-								// note hit
-				printf("clap\n");
-				hit_effect.create_cube_set(temp_clap.pattern, temp_clap.patternHit);
-				clap.play(0, false);
+				auto temp_clap = Map.clap(P);
+				if (temp_clap.is_hit)
+				{
+					// note hit
+					printf("clap\n");
+					hit_effect.create_cube_set(temp_clap.pattern, temp_clap.patternHit);
+					clap.play(0, false);
+				}
+				P.hit();
+				spaceKeydown = true;
 			}
-			P.hit();
 			break;
+		}
+	}
+	else
+	{
+		switch (key)
+		{
+		case ' ':
+			spaceKeydown = false;
 		}
 	}
 }
@@ -137,4 +153,5 @@ void Scene02_MIR::update(float fDeltaTime)
 	Camera_worldspace[0] = V3::normalize(axis[0]);
 	Camera_worldspace[1] = V3::normalize(axis[1]);
 
+	UI.update();
 }
