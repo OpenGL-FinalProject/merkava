@@ -24,6 +24,7 @@ public:
 	virtual void mouse(int button, bool pressed, int x, int y);
 	virtual void motion(bool pressed, int x, int y);
 	virtual void update(float fDeltaTime);
+	void start_to_change_scene();
 
 
 
@@ -36,5 +37,8 @@ private:
 
 	float      get_time;
 	float      start_button_alpha;
+	bool       is_started_to_change_scene;
+	float      elapsed_time_since_scene_change_started;
+	float      time_to_change_scene;
 };
 
