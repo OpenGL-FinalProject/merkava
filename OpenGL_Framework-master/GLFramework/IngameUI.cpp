@@ -87,15 +87,7 @@ void IngameUI::render(Vector3 UIPosition, Vector3 * Camera_worldspace, float dis
 	}
 	glEnd();
 
-	/*glBegin(GL_LINE_STRIP);
-	for (int i = 0; i < 31; i++)
-	{
-		Vectorworld = V3::times(Camera_worldspace[0], cos(i*3.14f*6.f / 90.f)  * 10.f);
-		Vectorup = V3::times(Camera_worldspace[1], sin(i*3.14f*6.f / 90.f) * 10.f);
 
-		glVertex3f(Vectorworld.x + Vectorup.x, Vectorworld.y + Vectorup.y, Vectorworld.z + Vectorup.z);
-	}
-	glEnd();*/
 	glPopMatrix();
 }
 

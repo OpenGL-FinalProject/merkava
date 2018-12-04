@@ -32,6 +32,7 @@ void Scene02_MIR::init()
 	get_time = 0;
 	patternNum = 0;
 
+	mayidrawUI = true;
 	UI.init(&Map);
 }
 
@@ -53,10 +54,13 @@ void Scene02_MIR::render()
 	if (!coaster)
 		P.render();
 	hit_effect.render();
-
-	UIPosition = V3::add(Map.getCameraPosition(get_time), V3::subtract(P.Position, Map.getCameraPosition(get_time)));
-	//printf("%f %f = %f\n", P.Position.x, Map.getCameraPosition(get_time).x, V3::dist(P.Position, Map.getCameraPosition(get_time)));
-	UI.render(UIPosition, Camera_worldspace, V3::dist(P.Position, Map.getCameraPosition(get_time)));
+	
+	if (mayidrawUI)
+	{
+		UIPosition = V3::add(Map.getCameraPosition(get_time), V3::subtract(P.Position, Map.getCameraPosition(get_time)));
+		//printf("%f %f = %f\n", P.Position.x, Map.getCameraPosition(get_time).x, V3::dist(P.Position, Map.getCameraPosition(get_time)));
+		UI.render(UIPosition, Camera_worldspace, V3::dist(P.Position, Map.getCameraPosition(get_time)));
+	}
 }
 
 void Scene02_MIR::reshape(int w, int h)
@@ -122,12 +126,14 @@ void Scene02_MIR::motion(bool pressed, int x, int y)
 	if (s)
 	{
 		m_Camera.rotate(x, 0.f, pressed);
-		m_Camera.setTarget(P.Position);
+		if (pressed)
+			mayidrawUI = false;
 	}
 	else
 	{
 		m_Camera.rotate(0.f, y, pressed);
-		m_Camera.setTarget(P.Position);
+		if (pressed)
+			mayidrawUI = false;
 	}
 }
 
