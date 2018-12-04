@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "IngameUI.h"
 #include "MapData.h"
+#include "GLScene.h"
 
 IngameUI::IngameUI()
 {
@@ -86,6 +87,27 @@ void IngameUI::render(Vector3 UIPosition, Vector3 * Camera_worldspace, float dis
 		glVertex3f(Vectorworld.x + Vectorup.x, Vectorworld.y + Vectorup.y, Vectorworld.z + Vectorup.z);
 	}
 	glEnd();
+
+	Vectorworld = V3::times(Camera_worldspace[0], -1.5f * 5.f);
+	Vectorup = V3::times(Camera_worldspace[1], -1.5f * 5.f);
+
+	
+	//텍스트 출력
+	glPushMatrix();
+	{
+		//문자열 받아오고  - to_do - 점수 계산
+		std::string str = "aaaaaa";
+		Vectorworld = V3::times(Camera_worldspace[0], -1.5f * 5.f);
+		Vectorup = V3::times(Camera_worldspace[1], -1.5f * 5.f);
+
+		glColor3f(1.f, 1.f, 1.f);
+		float sz = static_cast<float>(str.size());
+		glRasterPos3f(Vectorworld.x + Vectorup.x, Vectorworld.y + Vectorup.y, Vectorworld.z + Vectorup.z);
+		for (size_t s = 0; s < str.size(); s++)
+			glutBitmapCharacter(GLUT_BITMAP_9_BY_15, str[s]);
+
+	}
+	glPopMatrix();
 
 
 	glPopMatrix();
