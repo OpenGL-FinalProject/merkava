@@ -23,7 +23,7 @@ void Scene02_MIR::init()
 	
 	MIL.init();
 	clap.init();
-	UI.init();
+
 	MIL.selectFolder("Resources");
 	clap.addSound("FX\\clap.mp3", true);
 
@@ -32,6 +32,7 @@ void Scene02_MIR::init()
 	get_time = 0;
 	patternNum = 0;
 
+	UI.init(&Map);
 }
 
 void Scene02_MIR::exit()
