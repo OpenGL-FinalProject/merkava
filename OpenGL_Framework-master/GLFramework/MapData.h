@@ -22,7 +22,7 @@ public:
 	void init(int stageNum);
 	void render(bool coaster, float time, Vector3* Camera_worldspace, Vector3* axis);
 	void drawBillboardCircle(float size, Vector3* Camera_worldspace);
-	void drawArrowNote(Vector3 CurrentLineVec, Vector3* Camera_worldspace, Vector3 Vec_look);
+	void drawArrowNote(float time, Vector3 CurrentLineVec,  Vector3 Vec_look, int dir);
 	Vector3 getCameraPosition(float time);
 	Vector3 getPlayerPosition(float time);
 	Vector3 getCurrentLineVector(float time);

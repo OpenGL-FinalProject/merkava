@@ -144,9 +144,6 @@
     <ClCompile Include="IngameUI.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
-    <ClCompile Include="ArrowNode.cpp">
-      <Filter>Source Files\Utilities\3D Objects</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -232,9 +229,6 @@
     </ClInclude>
     <ClInclude Include="IngameUI.h">
       <Filter>Header Files\Map</Filter>
-    </ClInclude>
-    <ClInclude Include="ArrowNode.h">
-      <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

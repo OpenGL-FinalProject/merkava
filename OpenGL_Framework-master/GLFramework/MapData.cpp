@@ -153,7 +153,7 @@ void MapData::render(bool coaster, float time,Vector3* Camera_worldspace, Vector
 				else
 					drawBillboardCircle((patternTime[i] - time) * 3.2f + 0.8f, Camera_worldspace);
 			}
-			drawArrowNote(getCurrentLineVector(patternTime[i]), Camera_worldspace, axis[2]);
+			drawArrowNote(time, getCurrentLineVector(patternTime[i]), axis[2], 1); //dir = 1 or -1 
 		}glPopMatrix();
 	}
 	glColor3f(1.f, 1.f, 1.f);
@@ -172,93 +172,79 @@ void MapData::drawBillboardCircle(float size, Vector3* Camera_worldspace)
 	}
 	glEnd();
 }
-void MapData::drawArrowNote(Vector3 getCurrentLineVec, Vector3* Camera_worldspace, Vector3 Vec_look)
+void MapData::drawArrowNote(float time, Vector3 getCurrentLineVec, Vector3 Vec_look, int dir)
 {
-	Vector3 Vectorworld = Camera_worldspace[0];
-	Vector3 Vectorup = Camera_worldspace[1];
+	float temp_time = ((time*2) - (int)(time)*2)/4;
 
-
-	Vector3 Vec_cross_lline_look = V3::normalize(V3::cross(getCurrentLineVec, Vec_look));
-
-	if (V3::dot(getCurrentLineVec, Vec_look) < 0)
-		Vec_cross_lline_look = V3::times( Vec_cross_lline_look,-1);
-
+	Vector3 Vec_cross_line_look = V3::normalize(V3::cross(getCurrentLineVec, Vec_look));
+	Vec_cross_line_look = V3::times(Vec_cross_line_look, dir);
+	
+	Vector3 Vec_cross_line_look_look = V3::normalize(V3::cross(Vec_look, Vec_cross_line_look));
 
 	float size = 0.4f;
-	float temptemptemptemptemptemptemptemp = 3;
+	float width_height_offset = 1.2; //몰라 변수 이름 짓는게 제일 어려워
 	glPushMatrix();
 	{
-		float temp_angle = 180.f/M_PI*acos(V3::dot(Vector3{ 1,0,0 }, Vec_cross_lline_look) / V3::size(V3::cross(Vector3{ 1,0,0 }, Vec_cross_lline_look)));
-
-		glRotatef(temp_angle,1,0,0);
-	
 		
-		glColor3d(1, 1, 1);
+		glTranslatef(Vec_cross_line_look.x*temp_time, Vec_cross_line_look.y*temp_time, Vec_cross_line_look.z*temp_time);
+		
+		glColor3f(1.f, 1.f, 1.f);
 		glPushMatrix();
 		{
 			glBegin(GL_LINE_LOOP);
-			/*glVertex3f((Vectorworld.x + Vectorup.x*-size )* Vec_cross_lline_look.x,( Vectorworld.y * Vectorup.y*-size)*Vec_cross_lline_look.y, (Vectorworld.z * Vectorup.z*-size)*Vec_cross_lline_look.z);
-			glVertex3f((Vectorworld.x + Vectorup.x*size )* Vec_cross_lline_look.x, (Vectorworld.y * Vectorup.y*size)*Vec_cross_lline_look.y, (Vectorworld.z * Vectorup.z*size)*Vec_cross_lline_look.z);
-			glVertex3f((Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*size )* Vec_cross_lline_look.x, (Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*size)*Vec_cross_lline_look.y,( Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*size)* Vec_cross_lline_look.z);
-			glVertex3f((Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*-size)* Vec_cross_lline_look.x,( Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*-size)*Vec_cross_lline_look.y ,(Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*-size)* Vec_cross_lline_look.z);
-			*/
-			glVertex3f(Vectorworld.x + Vectorup.x*-size+ Vec_cross_lline_look.x, Vectorworld.y + Vectorup.y*-size + Vec_cross_lline_look.y, Vectorworld.z + Vectorup.z*-size + Vec_cross_lline_look.z);
-			glVertex3f(Vectorworld.x + Vectorup.x*size + Vec_cross_lline_look.x, Vectorworld.y + Vectorup.y*size + Vec_cross_lline_look.y, Vectorworld.z + Vectorup.z*size + Vec_cross_lline_look.z);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*size + Vec_cross_lline_look.x, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*size + Vec_cross_lline_look.y, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*size + Vec_cross_lline_look.z);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*-size+ Vec_cross_lline_look.x, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*-size + Vec_cross_lline_look.y, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*-size + Vec_cross_lline_look.z);
-
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size, Vec_cross_line_look.y + getCurrentLineVec.y*-size, Vec_cross_line_look.z + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*-size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*-size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*size);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size, Vec_cross_line_look.y + getCurrentLineVec.y*size, Vec_cross_line_look.z + getCurrentLineVec.z*size);
 			glEnd();
-
-			glTranslatef(Vectorworld.x*size*Vec_cross_lline_look.x, Vectorworld.y*size+ Vec_cross_lline_look.y, Vectorworld.z*size*Vec_cross_lline_look.z);
 			
-			glBegin(GL_LINE_LOOP);
-		glVertex3f(Vectorworld.x + Vectorup.x*-size+ Vec_cross_lline_look.x, Vectorworld.y + Vectorup.y*-size + Vec_cross_lline_look.y, Vectorworld.z + Vectorup.z*-size + Vec_cross_lline_look.z);
-			glVertex3f(Vectorworld.x + Vectorup.x*size + Vec_cross_lline_look.x, Vectorworld.y + Vectorup.y*size + Vec_cross_lline_look.y, Vectorworld.z + Vectorup.z*size + Vec_cross_lline_look.z);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*size + Vec_cross_lline_look.x, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*size + Vec_cross_lline_look.y, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*size + Vec_cross_lline_look.z);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*-size+ Vec_cross_lline_look.x, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*-size + Vec_cross_lline_look.y, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*-size + Vec_cross_lline_look.z);
-
-			glEnd();
-			/*
-			glTranslatef(Vectorworld.x*size , Vectorworld.y*size , Vectorworld.z*size );
+			glTranslatef(Vec_cross_line_look.x*0.5f, Vec_cross_line_look.y*0.5f, Vec_cross_line_look.z*0.5f);
 
 			glBegin(GL_LINE_LOOP);
-			glVertex3f(Vectorworld.x + Vectorup.x*-size, Vectorworld.y + Vectorup.y*-size, Vectorworld.z + Vectorup.z*-size);
-			glVertex3f(Vectorworld.x + Vectorup.x*size, Vectorworld.y + Vectorup.y*size, Vectorworld.z + Vectorup.z*size);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*size, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*size, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*size);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*-size, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*-size, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*-size);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size, Vec_cross_line_look.y + getCurrentLineVec.y*-size, Vec_cross_line_look.z + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*-size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*-size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*size);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size, Vec_cross_line_look.y + getCurrentLineVec.y*size, Vec_cross_line_look.z + getCurrentLineVec.z*size);
 			glEnd();
 
-			glTranslatef(Vectorworld.x*size, Vectorworld.y*size , Vectorworld.z*size );
+			glTranslatef(Vec_cross_line_look.x*0.5f, Vec_cross_line_look.y*0.5f, Vec_cross_line_look.z*0.5f);
 
 			glBegin(GL_LINE_LOOP);
-			glVertex3f(Vectorworld.x + Vectorup.x*-size, Vectorworld.y + Vectorup.y*-size, Vectorworld.z + Vectorup.z*-size);
-			glVertex3f(Vectorworld.x + Vectorup.x*size, Vectorworld.y + Vectorup.y*size, Vectorworld.z + Vectorup.z*size);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*size, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*size, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*size);
-			glVertex3f(Vectorworld.x*size * temptemptemptemptemptemptemptemp + Vectorup.x*-size, Vectorworld.y*size * temptemptemptemptemptemptemptemp + Vectorup.y*-size, Vectorworld.z*size * temptemptemptemptemptemptemptemp + Vectorup.z*-size);
-			glEnd();*/
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size, Vec_cross_line_look.y + getCurrentLineVec.y*-size, Vec_cross_line_look.z + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*-size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*-size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*size);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size, Vec_cross_line_look.y + getCurrentLineVec.y*size, Vec_cross_line_look.z + getCurrentLineVec.z*size);
+			glEnd();
+			glTranslatef(Vec_cross_line_look.x*0.5f, Vec_cross_line_look.y*0.5f, Vec_cross_line_look.z*0.5f);
+
+			glBegin(GL_LINE_LOOP);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size, Vec_cross_line_look.y + getCurrentLineVec.y*-size, Vec_cross_line_look.z + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*-size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*-size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*size);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size, Vec_cross_line_look.y + getCurrentLineVec.y*size, Vec_cross_line_look.z + getCurrentLineVec.z*size);
+			glEnd();
+			glTranslatef(Vec_cross_line_look.x*0.5f, Vec_cross_line_look.y*0.5f, Vec_cross_line_look.z*0.5f);
+
+			glBegin(GL_LINE_LOOP);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size, Vec_cross_line_look.y + getCurrentLineVec.y*-size, Vec_cross_line_look.z + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*-size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*-size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*-size);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*size);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size, Vec_cross_line_look.y + getCurrentLineVec.y*size, Vec_cross_line_look.z + getCurrentLineVec.z*size);
+			glEnd();
+
+			glTranslatef(Vec_cross_line_look.x*0.5f, Vec_cross_line_look.y*0.5f, Vec_cross_line_look.z*0.5f);
+			//glTranslatef(Vec_cross_line_look.x*-temp_time, Vec_cross_line_look.y*-temp_time, Vec_cross_line_look.z*-temp_time);
+
+
+			glBegin(GL_LINE_LOOP);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size*2, Vec_cross_line_look.y + getCurrentLineVec.y*-size*2, Vec_cross_line_look.z + getCurrentLineVec.z*-size*2);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset*1.5 , Vec_cross_line_look.y*width_height_offset*1.5 , Vec_cross_line_look.z*width_height_offset*1.5);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size * 2, Vec_cross_line_look.y + getCurrentLineVec.y*size * 2, Vec_cross_line_look.z + getCurrentLineVec.z*size * 2); glEnd();
+		
 		
 		}
 		glPopMatrix();
-		/*
-		glColor3f(1.0f, 1.0f, 1.0f);
-
-		glBegin(GL_LINE_STRIP);
-		glPushMatrix();
-		{
-			glTranslate()
-
-		}
-		glPopMatrix();
-		glEnd();
-
-		glBegin(GL_LINE_STRIP);
-		for (int i = 0; i < 31; i++)
-		{
-
-
-			glVertex3f(Vectorworld.x + Vectorup.x, Vectorworld.y + Vectorup.y, Vectorworld.z + Vectorup.z);
-		}
-		glEnd();*/
+	
 	}
 	glPopMatrix();
 }
