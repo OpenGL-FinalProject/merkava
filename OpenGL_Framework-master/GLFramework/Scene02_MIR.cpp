@@ -17,12 +17,14 @@ void Scene02_MIR::init()
 	m_Camera.setSensitivity(10.f);
 	m_Camera.setEye(Vector3{ 100.f,100.f,300.f });
 
-	pause = false;
 	coaster = false;
 	spaceKeydown = false;
 	
 	MIL.init();
 	clap.init();
+
+	s = false;
+	k = false;
 
 	MIL.selectFolder("Resources");
 	clap.addSound("FX\\clap.mp3", true);
@@ -34,6 +36,11 @@ void Scene02_MIR::init()
 
 	mayidrawUI = true;
 	UI.init(&Map);
+	gridOn = true;
+	UI.setGridColor(0.f, 0.f, 0.f);
+
+	pause = true;
+	MIL.pause();
 }
 
 void Scene02_MIR::exit()
@@ -61,6 +68,8 @@ void Scene02_MIR::render()
 		//printf("%f %f = %f\n", P.Position.x, Map.getCameraPosition(get_time).x, V3::dist(P.Position, Map.getCameraPosition(get_time)));
 		UI.render(UIPosition, Camera_worldspace, V3::dist(P.Position, Map.getCameraPosition(get_time)));
 	}
+	if (gridOn)
+		UI.grid();
 }
 
 void Scene02_MIR::reshape(int w, int h)
@@ -90,6 +99,8 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 		case '!':
 			coaster = (coaster + 1) % 2; break;
 			break;
+		case 'g':
+			gridOn = (gridOn + 1) % 2; break;
 		case ' ':
 			if (!spaceKeydown)
 			{
@@ -99,6 +110,7 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 					// note hit
 					printf("clap\n");
 					hit_effect.create_cube_set(temp_clap.pattern, temp_clap.patternHit);
+					UI.scoreUp(temp_clap.patternHit);
 					clap.play(0, false);
 				}
 				P.hit();
@@ -119,21 +131,29 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 
 void Scene02_MIR::mouse(int button, bool pressed, int x, int y)
 {
+	if (button == GLUT_LEFT_BUTTON && pressed)
+		k = false;
+	else if (button == GLUT_RIGHT_BUTTON && pressed)
+		k = true;
+
 }
 
 void Scene02_MIR::motion(bool pressed, int x, int y)
 {
-	if (s)
+	if (k)
 	{
-		m_Camera.rotate(x, 0.f, pressed);
-		if (pressed)
-			mayidrawUI = false;
-	}
-	else
-	{
-		m_Camera.rotate(0.f, y, pressed);
-		if (pressed)
-			mayidrawUI = false;
+		if (s)
+		{
+			m_Camera.rotate(x, 0.f, pressed);
+			if (pressed)
+				mayidrawUI = false;
+		}
+		else
+		{
+			m_Camera.rotate(0.f, y, pressed);
+			if (pressed)
+				mayidrawUI = false;
+		}
 	}
 }
 
@@ -160,6 +180,7 @@ void Scene02_MIR::update(float fDeltaTime)
 			m_Camera.setTarget(P.Position);
 		}
 		
+		UI.update();
 	}
 	axis[2] = V3::normalize(m_Camera.getLook());
 	axis[0] = V3::normalize(m_Camera.getRight());
@@ -168,5 +189,5 @@ void Scene02_MIR::update(float fDeltaTime)
 	Camera_worldspace[0] = V3::normalize(axis[0]);
 	Camera_worldspace[1] = V3::normalize(axis[1]);
 
-	UI.update();
+	
 }

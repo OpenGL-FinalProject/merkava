@@ -40,7 +40,7 @@ private:
 
 	SoundPlayer		MIL;
 	Sound			clap;
-	bool			s;
+	bool			s, k;
 	bool			spaceKeydown;
 	bool			pause;
 	bool			coaster;
@@ -56,4 +56,5 @@ private:
 	IngameUI		UI;
 	Vector3			UIPosition;
 	bool			mayidrawUI;
+	bool			gridOn;
 };

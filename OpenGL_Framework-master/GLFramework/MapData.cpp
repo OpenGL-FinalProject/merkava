@@ -118,7 +118,7 @@ void MapData::init(int stageNum)
 
 }
 
-void MapData::render(bool coaster, float time,Vector3* Camera_worldspace, Vector3* axis)
+void MapData::render(bool coaster, float time, Vector3* Camera_worldspace, Vector3* axis)
 {
 	glColor3f(1.f, 1.f, 1.f);
 	glBegin(GL_LINE_STRIP);
@@ -129,32 +129,6 @@ void MapData::render(bool coaster, float time,Vector3* Camera_worldspace, Vector
 		}
 	}
 	glEnd();
-
-	/*glColor3f(0.32f, 0.32f, 0.32f);
-	glBegin(GL_LINES);
-	{
-		for (int i = 0; i < 60; i++)
-		{
-			glVertex3f(-200.f, -10.f, -150.f);
-			glVertex3f(-200.f,  10.f*i, 150.f);
-
-			glVertex3f(-200.f, -10.f, -150.f);
-			glVertex3f(-190.f + i*10.f, -10.f, 150.f);
-			
-			glVertex3f(-200.f, -100.f, -150.f);
-			glVertex3f(-200.f, 800.f*i, -140.f+i*10);
-			
-			glVertex3f(-200.f, -10.f, -150.f);
-			glVertex3f(200.f + i*10.f, -10.f, -140.f + 10.f*i);
-
-			glVertex3f(-200.f, -10.f, -150.f);
-			glVertex3f(200.f, 10.f*i, -150.f);
-
-			glVertex3f(-200.f, -10.f, 150.f);
-			glVertex3f(-190.f + i*10.f, 10.f*i, -150.f);
-		}
-	}
-	glEnd();*/
 
 	for (int i = 0; i < patternNum; i++)
 	{
@@ -193,27 +167,27 @@ void MapData::drawBillboardCircle(float size, Vector3* Camera_worldspace)
 	{
 		Vector3 Vectorworld = V3::times(Camera_worldspace[0], cos(i*3.14f*6.f / 90.f) * size);
 		Vector3 Vectorup = V3::times(Camera_worldspace[1], sin(i*3.14f*6.f / 90.f) * size);
-	
+
 		glVertex3f(Vectorworld.x + Vectorup.x, Vectorworld.y + Vectorup.y, Vectorworld.z + Vectorup.z);
 	}
 	glEnd();
 }
 void MapData::drawArrowNote(float time, Vector3 getCurrentLineVec, Vector3 Vec_look, int dir)
 {
-	float temp_time = ((time*2) - (int)(time)*2)/4;
+	float temp_time = ((time * 2) - (int)(time) * 2) / 4;
 
 	Vector3 Vec_cross_line_look = V3::normalize(V3::cross(getCurrentLineVec, Vec_look));
 	Vec_cross_line_look = V3::times(Vec_cross_line_look, dir);
-	
+
 	Vector3 Vec_cross_line_look_look = V3::normalize(V3::cross(Vec_look, Vec_cross_line_look));
 
 	float size = 0.4f;
 	float width_height_offset = 1.2; //몰라 변수 이름 짓는게 제일 어려워
 	glPushMatrix();
 	{
-		
+
 		glTranslatef(Vec_cross_line_look.x*temp_time, Vec_cross_line_look.y*temp_time, Vec_cross_line_look.z*temp_time);
-		
+
 		glColor3f(1.f, 1.f, 1.f);
 		glPushMatrix();
 		{
@@ -223,7 +197,7 @@ void MapData::drawArrowNote(float time, Vector3 getCurrentLineVec, Vector3 Vec_l
 			glVertex3f(Vec_cross_line_look.x*width_height_offset + getCurrentLineVec.x*size, Vec_cross_line_look.y*width_height_offset + getCurrentLineVec.y*size, Vec_cross_line_look.z*width_height_offset + getCurrentLineVec.z*size);
 			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size, Vec_cross_line_look.y + getCurrentLineVec.y*size, Vec_cross_line_look.z + getCurrentLineVec.z*size);
 			glEnd();
-			
+
 			glTranslatef(Vec_cross_line_look.x*0.5f, Vec_cross_line_look.y*0.5f, Vec_cross_line_look.z*0.5f);
 
 			glBegin(GL_LINE_LOOP);
@@ -263,14 +237,14 @@ void MapData::drawArrowNote(float time, Vector3 getCurrentLineVec, Vector3 Vec_l
 
 
 			glBegin(GL_LINE_LOOP);
-			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size*2, Vec_cross_line_look.y + getCurrentLineVec.y*-size*2, Vec_cross_line_look.z + getCurrentLineVec.z*-size*2);
-			glVertex3f(Vec_cross_line_look.x*width_height_offset*1.5 , Vec_cross_line_look.y*width_height_offset*1.5 , Vec_cross_line_look.z*width_height_offset*1.5);
+			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*-size * 2, Vec_cross_line_look.y + getCurrentLineVec.y*-size * 2, Vec_cross_line_look.z + getCurrentLineVec.z*-size * 2);
+			glVertex3f(Vec_cross_line_look.x*width_height_offset*1.5, Vec_cross_line_look.y*width_height_offset*1.5, Vec_cross_line_look.z*width_height_offset*1.5);
 			glVertex3f(Vec_cross_line_look.x + getCurrentLineVec.x*size * 2, Vec_cross_line_look.y + getCurrentLineVec.y*size * 2, Vec_cross_line_look.z + getCurrentLineVec.z*size * 2); glEnd();
-		
-		
+
+
 		}
 		glPopMatrix();
-	
+
 	}
 	glPopMatrix();
 }

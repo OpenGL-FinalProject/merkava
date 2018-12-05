@@ -9,7 +9,10 @@ public:
 
 	void init(MapData*);
 	void samplerRectangle(Vector3 * Camera_worldspace);
+	void setGridColor(float x, float y, float z);
+	void grid();
 	void render(Vector3 CameraPosition, Vector3 * Camera_worldspace, float dist);
+	void scoreUp(bool critical);
 	void update();
 
 	Vector3 Vectorworld;
@@ -17,4 +20,9 @@ public:
 
 	MapData* Mapdata;
 	float gap;
+
+	int printScore;
+	int score;
+
+	float gridColor[3];
 };
