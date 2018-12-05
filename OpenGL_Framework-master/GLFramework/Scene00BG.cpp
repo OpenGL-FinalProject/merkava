@@ -2,6 +2,8 @@
 #include "stdafx.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
+
+
 Scene00_BG::Scene00_BG()
 {
 	player.update(NULL, player_pos);

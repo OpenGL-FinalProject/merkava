@@ -8,6 +8,8 @@
 #include "SoundPlayer.h"
 /* ------------ */
 
+//이미 죽은 씬입니다
+
 class S01_MusicSelection :
 	public GLScene
 {

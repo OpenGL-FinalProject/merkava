@@ -5,11 +5,15 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-
+	
 S00_Logo::S00_Logo()
 {
 	elapsed_time_since_scene_change_started = 0.f;
 	time_to_change_scene = 2.f;
+
+	TexBits = LoadDIBitmap("Resources\\merkava_txt.bmp", &texture);
+
+	title.load("Resources\\merkava_txt.png");
 }
 
 S00_Logo::~S00_Logo()
@@ -37,6 +41,48 @@ void S00_Logo::render()
 	m_Camera.ready();
 
 	BG.render();
+	
+	
+	
+	//glRasterPos2f(-50, 0);
+	//glDrawPixels(1089, 229, GL_BGR_EXT, GL_UNSIGNED_BYTE, TexBits);
+
+
+	//glTexImage2D(GL_TEXTURE_2D, 0, 4, 1089, 229, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, TexBits);
+	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); 
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); 
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
+	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	//glEnable(GL_TEXTURE_2D); 
+	//
+	//glTexGeni(GL_Q, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
+	//glEnable(GL_TEXTURE_GEN_Q);
+	title.drawStart();
+	glBegin(GL_QUADS); 
+	//glTexCoord2d(0.0f, 0.0f);
+	glVertex3f(-60.f, -30.f,0);
+
+	//glTexCoord2d(1.0f, 0.0f);
+	glVertex3f(60.f,- 30.f,0);
+
+	//glTexCoord2d(1.0f, 1.0f);
+	glVertex3f(60.f, 30.f, 0);
+
+	//glTexCoord2d(0.0f, 1.0f);
+	glVertex3f(-60.f, 30.f, 0);
+	glEnd();
+
+	title.drawEnd();
+		/*glDisable(GL_TEXTURE_2D);
+		glDisable(GL_TEXTURE_GEN_Q);
+*/
+
+
+
+
+	print("MERKAVA", 6, 30, 100, 1.f, 1.f, 1.f);
 	
 	//텍스트도 객체로 빼야하는데.. 귀찮아
 	print("Press s to start",6 , -30, 100,1.f,1.f,1.f, start_button_alpha); //현재 x,y값 상수 
@@ -78,15 +124,15 @@ void S00_Logo::update(float fDeltaTime)
 	{
 		start_button_alpha = sin((get_time - (int)get_time) * M_PI);
 	}
-	else if(is_started_to_change_scene==true)
+	else if (is_started_to_change_scene == true)
 	{
 		elapsed_time_since_scene_change_started += fDeltaTime;
-		start_button_alpha = sin((1-elapsed_time_since_scene_change_started)*M_PI / (time_to_change_scene));
+		start_button_alpha = sin((1 - elapsed_time_since_scene_change_started)*M_PI / (time_to_change_scene));
 	}
 
-	if(elapsed_time_since_scene_change_started >= time_to_change_scene + 1.0f)
-		m_Framework->toScene("Made In Love"); 
-	
+	if (elapsed_time_since_scene_change_started >= time_to_change_scene + 1.0f)
+		m_Framework->toScene("Made In Love");
+
 }
 
 void S00_Logo::start_to_change_scene()
@@ -94,3 +140,72 @@ void S00_Logo::start_to_change_scene()
 	is_started_to_change_scene = true;
 	start_button_alpha = 1.f;
 }
+
+GLubyte* S00_Logo::LoadDIBitmap(const char *filename, BITMAPINFO **info)
+{
+	//기존 텍스쳐 매핑 터진다고 해서 따로 만듦
+	//다른 곳에 쓸 일 없을 거라고 믿고 S00_Logo에 박는다!
+	FILE *fp; GLubyte *bits; int bitsize, infosize;
+	BITMAPFILEHEADER header;
+
+	// 바이너리 읽기 모드로 파일을 연다
+	if ((fp = fopen(filename, "rb")) == NULL)
+		std::cout << "error" << std::endl;
+	// 비트맵 파일 헤더를 읽는다. 
+	if (fread(&header, sizeof(BITMAPFILEHEADER), 1, fp) < 1)
+	{
+		fclose(fp);
+		std::cout << "error" << std::endl;
+		return NULL;
+	}
+	// 파일이 BMP 파일인지 확인한다. 
+	if (header.bfType != 'MB')
+	{
+		fclose(fp);
+		std::cout << "error" << std::endl;
+		return NULL;
+	}
+	// BITMAPINFOHEADER 위치로 간다. 
+
+	infosize = header.bfOffBits - sizeof(BITMAPFILEHEADER);
+	// 비트맵 이미지 데이터를 넣을 메모리 할당을 한다. 
+	if ((*info = (BITMAPINFO *)malloc(infosize)) == NULL)
+	{
+		fclose(fp);
+		exit();
+		std::cout << "error" << std::endl;
+		return NULL;
+	}
+	// 비트맵 인포 헤더를 읽는다.
+	if (fread(*info, 1, infosize, fp) < (unsigned int)infosize)
+	{
+		free(*info);
+		fclose(fp);
+		std::cout << "error" << std::endl;
+		return NULL;
+	}
+	// 비트맵의 크기 설정 
+	if ((bitsize = (*info)->bmiHeader.biSizeImage) == 0)
+		bitsize = ((*info)->bmiHeader.biWidth*(*info)->bmiHeader.biBitCount + 7) / 8.0 *  abs((*info)->bmiHeader.biHeight);
+	// 비트맵의 크기만큼 메모리를 할당한다.
+	if ((bits = (unsigned char *)malloc(bitsize)) == NULL)
+	{
+		free(*info);
+		fclose(fp);
+		std::cout << "error" << std::endl;
+		return NULL;
+	}
+	// 비트맵 데이터를 bit(GLubyte 타입)에 저장한다. 
+	if (fread(bits, 1, bitsize, fp) < (unsigned int)bitsize)
+	{
+		free(*info);
+		free(bits);
+		fclose(fp);
+		std::cout << "error" << std::endl;
+		return NULL;
+	}
+	fclose(fp);
+	return bits;
+
+
+};

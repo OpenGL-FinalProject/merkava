@@ -6,6 +6,8 @@
 #include "Object.h"
 #include "Camera.h"
 #include "Scene00_BG.h"
+#include "Texture.h"
+
 /* ------------ */
 
 class S00_Logo :
@@ -25,7 +27,7 @@ public:
 	virtual void motion(bool pressed, int x, int y);
 	virtual void update(float fDeltaTime);
 	void start_to_change_scene();
-
+	GLubyte* LoadDIBitmap(const char *filename, BITMAPINFO **info);
 
 
 private:
@@ -40,5 +42,11 @@ private:
 	bool       is_started_to_change_scene;
 	float      elapsed_time_since_scene_change_started;
 	float      time_to_change_scene;
+
+	//for title texture
+	GLubyte * TexBits;
+	BITMAPINFO *texture;
+	Texture title;
 };
 
+	

@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Texture.h"
 #include <atlimage.h>
+#include <iostream>
 
 GLuint Texture::m_uGlobalTexID{ 0 };
 
@@ -23,6 +24,7 @@ void Texture::load(std::string path)
 
 	int bitsPerPixel = cimg.GetBPP() / 8;
 	bool hasAlpha = bitsPerPixel == 4;
+
 
 	m_Texture.uTextureIdx = m_uGlobalTexID;
 	m_Texture.hasAlpha = hasAlpha;
