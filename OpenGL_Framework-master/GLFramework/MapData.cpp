@@ -130,6 +130,32 @@ void MapData::render(bool coaster, float time,Vector3* Camera_worldspace, Vector
 	}
 	glEnd();
 
+	/*glColor3f(0.32f, 0.32f, 0.32f);
+	glBegin(GL_LINES);
+	{
+		for (int i = 0; i < 60; i++)
+		{
+			glVertex3f(-200.f, -10.f, -150.f);
+			glVertex3f(-200.f,  10.f*i, 150.f);
+
+			glVertex3f(-200.f, -10.f, -150.f);
+			glVertex3f(-190.f + i*10.f, -10.f, 150.f);
+			
+			glVertex3f(-200.f, -100.f, -150.f);
+			glVertex3f(-200.f, 800.f*i, -140.f+i*10);
+			
+			glVertex3f(-200.f, -10.f, -150.f);
+			glVertex3f(200.f + i*10.f, -10.f, -140.f + 10.f*i);
+
+			glVertex3f(-200.f, -10.f, -150.f);
+			glVertex3f(200.f, 10.f*i, -150.f);
+
+			glVertex3f(-200.f, -10.f, 150.f);
+			glVertex3f(-190.f + i*10.f, 10.f*i, -150.f);
+		}
+	}
+	glEnd();*/
+
 	for (int i = 0; i < patternNum; i++)
 	{
 		if (patternHit[i] == 2)
@@ -153,7 +179,7 @@ void MapData::render(bool coaster, float time,Vector3* Camera_worldspace, Vector
 				else
 					drawBillboardCircle((patternTime[i] - time) * 3.2f + 0.8f, Camera_worldspace);
 			}
-			drawArrowNote(time, getCurrentLineVector(patternTime[i]), axis[2], 1); //dir = 1 or -1 
+			//drawArrowNote(time, getCurrentLineVector(patternTime[i]), axis[2], 1); //dir = 1 or -1 
 		}glPopMatrix();
 	}
 	glColor3f(1.f, 1.f, 1.f);
