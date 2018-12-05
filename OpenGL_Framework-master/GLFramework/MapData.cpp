@@ -153,7 +153,7 @@ void MapData::render(bool coaster, float time, Vector3* Camera_worldspace, Vecto
 				else
 					drawBillboardCircle((patternTime[i] - time) * 3.2f + 0.8f, Camera_worldspace);
 			}
-			//drawArrowNote(time, getCurrentLineVector(patternTime[i]), axis[2], 1); //dir = 1 or -1 
+			drawArrowNote(time, getCurrentLineVector(patternTime[i]), axis[2], 1); //dir = 1 or -1 
 		}glPopMatrix();
 	}
 	glColor3f(1.f, 1.f, 1.f);
