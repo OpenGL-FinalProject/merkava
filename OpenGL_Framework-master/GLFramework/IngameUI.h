@@ -12,7 +12,7 @@ public:
 	void setGridColor(float x, float y, float z);
 	void grid();
 	void render(Vector3 CameraPosition, Vector3 * Camera_worldspace, float dist);
-	void scoreUp(bool critical);
+	void scoreUp(int critical);
 	void update();
 
 	Vector3 Vectorworld;

@@ -177,9 +177,9 @@ void IngameUI::render(Vector3 UIPosition, Vector3 * Camera_worldspace, float dis
 	glPopMatrix();
 }
 
-void IngameUI::scoreUp(bool critical)
+void IngameUI::scoreUp(int critical)
 {
-	if (critical)
+	if (critical-1)
 	{
 		score += 200;
 	}
