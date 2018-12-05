@@ -10,7 +10,10 @@ public:
 	void init(MapData*);
 	void samplerRectangle(Vector3 * Camera_worldspace);
 	void setGridColor(float x, float y, float z);
+	void setFlashColor(float x, float y, float z);
+	void setFlashColor(float x, float y, float z, float a);
 	void grid();
+	void flash(Vector3 CameraPosition);
 	void render(Vector3 CameraPosition, Vector3 * Camera_worldspace, float dist);
 	void scoreUp(int critical);
 	void update();
@@ -25,4 +28,5 @@ public:
 	int score;
 
 	float gridColor[3];
+	float flashColor[4];
 };

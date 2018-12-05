@@ -21,6 +21,11 @@ void IngameUI::init(MapData* md)
 	gridColor[1] = 0.32f;
 	gridColor[2] = 0.32f;
 
+	flashColor[0] = 0.f;
+	flashColor[1] = 0.f;
+	flashColor[2] = 0.f;
+	flashColor[3] = 0.f;
+
 	printScore = 0;
 	score = 0;
 }
@@ -66,6 +71,22 @@ void IngameUI::setGridColor(float x, float y, float z)
 	gridColor[1] = y;
 	gridColor[2] = z;
 }
+
+void IngameUI::setFlashColor(float x, float y, float z)
+{
+	flashColor[0] = x;
+	flashColor[1] = y;
+	flashColor[2] = z;
+	flashColor[3] = 1.0f;
+}
+void IngameUI::setFlashColor(float x, float y, float z, float a)
+{
+	flashColor[0] = x;
+	flashColor[1] = y;
+	flashColor[2] = z;
+	flashColor[3] = a;
+}
+
 void IngameUI::grid()
 {
 	glColor3f(gridColor[0], gridColor[1], gridColor[2]);
@@ -115,13 +136,30 @@ void IngameUI::grid()
 	}
 	glEnd();
 }
+
+void IngameUI::flash(Vector3 CameraPosition)
+{
+	glPushMatrix();
+	{
+		glDisable(GL_CULL_FACE);
+		glTranslatef(CameraPosition.x, CameraPosition.y, CameraPosition.z);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glColor4f(flashColor[0], flashColor[1], flashColor[2],flashColor[3]);
+		glutSolidCube(1.f);
+		glDisable(GL_BLEND);
+		glEnable(GL_CULL_FACE);
+	}
+	glPopMatrix();
+}
 void IngameUI::render(Vector3 UIPosition, Vector3 * Camera_worldspace, float dist)
 {
 	glPushMatrix();
 	{
 		glTranslatef(UIPosition.x, UIPosition.y, UIPosition.z);
-
 		glScalef(dist / 50.f, dist / 50.f, dist / 50.f);
+
+		
 		//printf("%f , %f\n", dist, dist / 50.f);
 
 		samplerRectangle(Camera_worldspace);
@@ -202,5 +240,10 @@ void IngameUI::update()
 	}
 
 	if (score > printScore)
-		printScore += 7;
+		printScore += 13;
+	else
+		score = printScore;
+
+	if (flashColor[3] > 0.f)
+		flashColor[3] -= 0.04f;
 }

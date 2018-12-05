@@ -38,6 +38,7 @@ void Scene02_MIR::init()
 	UI.init(&Map);
 	gridOn = true;
 	UI.setGridColor(0.f, 0.f, 0.f);
+	UI.setFlashColor(1.f, 1.f, 1.f);
 
 	pause = true;
 	MIL.pause();
@@ -70,6 +71,7 @@ void Scene02_MIR::render()
 	}
 	if (gridOn)
 		UI.grid();
+	UI.flash(m_Camera.getEye());
 }
 
 void Scene02_MIR::reshape(int w, int h)
