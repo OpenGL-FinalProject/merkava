@@ -11,6 +11,7 @@
 #include "Player.h"
 #include "HitEffect.h"
 #include "IngameUI.h"
+#include "PlayData.h"
 /* ------------ */
 
 class Scene02_MIR :
@@ -59,4 +60,7 @@ private:
 	Vector3			UIPosition;
 	bool			mayidrawUI;
 	bool			gridOn;
+	//
+
+	PlayData*		PD = PlayData::getInstance();
 };

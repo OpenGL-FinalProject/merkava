@@ -6,6 +6,8 @@
 #include "NormalObject.h"
 #include "Camera.h"
 #include "AirPlane.h"
+#include "PlayData.h"
+#include "Scene00_BG.h"
 
 class S03Main : public GLScene
 {
@@ -26,5 +28,8 @@ public:
 private:
 	Camera			m_Camera;
 
+	PlayData*		PD = PlayData::getInstance();
+
+	Scene03_BG		BG;
 };
 

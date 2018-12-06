@@ -23,7 +23,6 @@ const GLSceneInfo SCENES[] =
 	{"Main", new S00_Logo, true},
 	{"Tutorial", new S01_MusicSelection, false},
 	{"Made In Love", new Scene02_MIR, false},
-	{"2", new S02Main, false},
 	{"Result", new S03Main, false},
 
 };

@@ -60,9 +60,6 @@ void Scene02_MIR::render()
 {
 	m_Camera.ready();
 
-	
-
-
 	Map.render(coaster,get_time, Camera_worldspace, axis);
 	if (!coaster)
 		P.render();
@@ -78,7 +75,7 @@ void Scene02_MIR::render()
 		UI.grid();
 	UI.flash(m_Camera.getEye());
 
-	}
+}
 
 void Scene02_MIR::reshape(int w, int h)
 {
@@ -192,9 +189,11 @@ void Scene02_MIR::update(float fDeltaTime)
 
 		if(music_ended)
 		{
+			PD->patternNum = Map.patternNum;
+			PD->score = UI.score;
+			memcpy(PD->patternHit, Map.patternHit, sizeof(float) * 600);
 			if (UI.fadeout(fDeltaTime))
 				m_Framework->toScene("Result");
-
 		}
 		else
 		{
@@ -202,9 +201,6 @@ void Scene02_MIR::update(float fDeltaTime)
 				music_ended = true;
 			UI.setFlashColor(0, 0, 0, 0);
 		}
-		
-		
-		
 		
 		UI.update(fDeltaTime);
 	}
@@ -214,7 +210,5 @@ void Scene02_MIR::update(float fDeltaTime)
 
 	Camera_worldspace[0] = V3::normalize(axis[0]);
 	Camera_worldspace[1] = V3::normalize(axis[1]);
-
-	
 }
 

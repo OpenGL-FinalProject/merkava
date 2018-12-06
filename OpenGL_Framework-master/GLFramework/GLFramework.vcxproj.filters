@@ -144,6 +144,9 @@
     <ClCompile Include="IngameUI.cpp">
       <Filter>Source Files\Map</Filter>
     </ClCompile>
+    <ClCompile Include="PlayData.cpp">
+      <Filter>Source Files\Base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -229,6 +232,9 @@
     </ClInclude>
     <ClInclude Include="IngameUI.h">
       <Filter>Header Files\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayData.h">
+      <Filter>Header Files\Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
