@@ -11,6 +11,10 @@ public:
 	Vector3 map[100] = {};
 	Vector3 camera[100] = {};
 	Vector3 pattern[600] = {};
+
+	Vector4 flashColor[100];
+	float flashTime[100];
+
 	int patternHit[600] = {0};
 	float patternTime[600] = {0};
 	float savedCameraOffset[3];

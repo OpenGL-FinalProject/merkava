@@ -247,13 +247,13 @@ void IngameUI::update(float fDeltaTime)
 	else
 		score = printScore;
 
-	if(!isfadingout)
-
+	if (!isfadingout)
+	{
 		if (flashColor[3] > 0.f)
 			flashColor[3] -= 0.04f;
+	}
 
 }
-
 
 
 bool IngameUI::fadeout(float fDeltaTime)

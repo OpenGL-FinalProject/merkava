@@ -198,8 +198,10 @@ void Scene02_MIR::update(float fDeltaTime)
 		else
 		{
 			if (get_time >= 138.f)
+			{
 				music_ended = true;
-			UI.setFlashColor(0, 0, 0, 0);
+				UI.setFlashColor(0, 0, 0, 0);
+			}
 		}
 		
 		UI.update(fDeltaTime);
