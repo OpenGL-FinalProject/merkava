@@ -16,7 +16,9 @@ public:
 	void flash(Vector3 CameraPosition);
 	void render(Vector3 CameraPosition, Vector3 * Camera_worldspace, float dist);
 	void scoreUp(int critical);
-	void update();
+	void update(float fDeltaTime);
+	bool fadeout(float fDeltaTime);
+
 
 	Vector3 Vectorworld;
 	Vector3 Vectorup;
@@ -29,4 +31,7 @@ public:
 
 	float gridColor[3];
 	float flashColor[4];
+
+	bool isfadingout;
+
 };

@@ -5,6 +5,7 @@
 
 IngameUI::IngameUI()
 {
+	
 }
 
 
@@ -28,6 +29,8 @@ void IngameUI::init(MapData* md)
 
 	printScore = 0;
 	score = 0;
+
+	isfadingout = false;
 }
 
 void IngameUI::samplerRectangle(Vector3 * Camera_worldspace)
@@ -227,7 +230,7 @@ void IngameUI::scoreUp(int critical)
 	}
 }
 
-void IngameUI::update()
+void IngameUI::update(float fDeltaTime)
 {
 	for (int i = 0; i < 3; i++)
 	{
@@ -244,6 +247,22 @@ void IngameUI::update()
 	else
 		score = printScore;
 
-	if (flashColor[3] > 0.f)
-		flashColor[3] -= 0.04f;
+	if(!isfadingout)
+
+		if (flashColor[3] > 0.f)
+			flashColor[3] -= 0.04f;
+
+}
+
+
+
+bool IngameUI::fadeout(float fDeltaTime)
+{
+	isfadingout = true;
+	flashColor[3] += fDeltaTime * 0.5f;
+
+	if (flashColor[3] >= 1)
+		return 1;
+	else
+		return 0;
 }

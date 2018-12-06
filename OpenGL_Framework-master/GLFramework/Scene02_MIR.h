@@ -30,6 +30,7 @@ public:
 	virtual void motion(bool pressed, int x, int y);
 	virtual void update(float fDeltaTime);
 
+
 private:
 	float			rX, rY, rZ;
 	int				tX, tY;
@@ -44,6 +45,7 @@ private:
 	bool			spaceKeydown;
 	bool			pause;
 	bool			coaster;
+	bool            music_ended;
 	//
 
 	MapData			Map;
