@@ -1,4 +1,4 @@
-
+#include <atlimage.h>
 #include "stdafx.h"
 #include "Scene00_Main.h"
 #include "GLFramework.h"
@@ -11,10 +11,9 @@ S00_Logo::S00_Logo()
 	elapsed_time_since_scene_change_started = 0.f;
 	time_to_change_scene = 2.f;
 
-	TexBits = LoadDIBitmap("Resources\\merkava_txt.bmp", &texture);
 
-	title.load("Resources\\merkava_txt.png");
 }
+
 
 S00_Logo::~S00_Logo()
 {
@@ -41,48 +40,9 @@ void S00_Logo::render()
 	m_Camera.ready();
 
 	BG.render();
+	//타이틀 미완 (외곽선 추가 예정)
+	TITLE.render();
 	
-	
-	
-	//glRasterPos2f(-50, 0);
-	//glDrawPixels(1089, 229, GL_BGR_EXT, GL_UNSIGNED_BYTE, TexBits);
-
-
-	//glTexImage2D(GL_TEXTURE_2D, 0, 4, 1089, 229, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, TexBits);
-	//glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR); 
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); 
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
-	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	//glEnable(GL_TEXTURE_2D); 
-	//
-	//glTexGeni(GL_Q, GL_TEXTURE_GEN_MODE, GL_EYE_LINEAR);
-	//glEnable(GL_TEXTURE_GEN_Q);
-	title.drawStart();
-	glBegin(GL_QUADS); 
-	//glTexCoord2d(0.0f, 0.0f);
-	glVertex3f(-60.f, -30.f,0);
-
-	//glTexCoord2d(1.0f, 0.0f);
-	glVertex3f(60.f,- 30.f,0);
-
-	//glTexCoord2d(1.0f, 1.0f);
-	glVertex3f(60.f, 30.f, 0);
-
-	//glTexCoord2d(0.0f, 1.0f);
-	glVertex3f(-60.f, 30.f, 0);
-	glEnd();
-
-	title.drawEnd();
-		/*glDisable(GL_TEXTURE_2D);
-		glDisable(GL_TEXTURE_GEN_Q);
-*/
-
-
-
-
-	print("MERKAVA", 6, 30, 100, 1.f, 1.f, 1.f);
 	
 	//텍스트도 객체로 빼야하는데.. 귀찮아
 	print("Press s to start",6 , -30, 100,1.f,1.f,1.f, start_button_alpha); //현재 x,y값 상수 

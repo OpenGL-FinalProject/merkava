@@ -47,3 +47,6 @@ void GLScene::loading()
 {
 	print("Loading...", 1.f,1.f,1.f,0, 0, -250);	
 }
+
+
+

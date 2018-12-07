@@ -32,21 +32,17 @@ public:
 
 private:
 
-	Camera	   m_Camera;
-	Model      m_Model;
-	Object	   m_Title;
-	Scene00_BG  BG;
+	Camera	      m_Camera;
+	Model         m_Model;
+	Object	      m_Title;
+	Scene00_BG    BG;
+	Scene00_TITLE TITLE;
 
-	float      get_time;
-	float      start_button_alpha;
-	bool       is_started_to_change_scene;
-	float      elapsed_time_since_scene_change_started;
-	float      time_to_change_scene;
-
-	//for title texture
-	GLubyte * TexBits;
-	BITMAPINFO *texture;
-	Texture title;
+	float         get_time;
+	float         start_button_alpha;
+	bool          is_started_to_change_scene;
+	float         elapsed_time_since_scene_change_started;
+	float         time_to_change_scene;
 };
 
 	

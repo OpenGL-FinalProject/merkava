@@ -29,6 +29,16 @@ private:
 	Vector3 player_pos = { 0,0,150 };
 };
 
+class Scene00_TITLE
+{
+public:
+	Scene00_TITLE();
+	~Scene00_TITLE();
+	void render();
+private:
+
+};
+
 class Scene03_BG
 {
 public:

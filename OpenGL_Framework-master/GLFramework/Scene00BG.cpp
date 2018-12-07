@@ -85,6 +85,241 @@ void Scene00_BG::start_to_change_scene()
 	line_alpha = 1.f;
 }
 
+Scene00_TITLE::Scene00_TITLE()
+{
+
+}
+
+Scene00_TITLE::~Scene00_TITLE()
+{
+
+}
+
+void Scene00_TITLE::render()
+{
+
+	glPushMatrix();
+	{
+		glColor3f(1, 1, 1);
+		glTranslatef(1, 10, 150);
+		glScalef(0.2, 0.2, 0.05);
+		//M
+		glPushMatrix();
+		{
+			glTranslatef(-65, 0, 0);
+
+			glScalef(0.1, 1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-61, 4, 0);
+			glRotatef(45, 0, 0, 1);
+			glScalef(0.1, 0.5 * sqrt(2), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-53, 4, 0);
+			glRotatef(-45, 0, 0, 1);
+			glScalef(0.1, 0.5 * sqrt(2), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-49, 0, 0);
+
+			glScalef(0.1, 1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+
+		//E
+		glPushMatrix();
+		{
+			glTranslatef(-43, 0, 0);
+
+			glScalef(0.1, 1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-37, 8, 0);
+
+			glScalef(0.75, 0.1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-37, 0, 0);
+
+			glScalef(0.75, 0.1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-37, -8, 0);
+
+			glScalef(0.75, 0.1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		//R
+		glPushMatrix();
+		{
+			glTranslatef(-25, 0, 0);
+
+			glScalef(0.1, 1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-21, 0, 0);
+
+			glScalef(0.5, 0.1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-21, 8, 0);
+
+			glScalef(0.5, 0.1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-18, 4, 0);
+			for (int i = 0; i <= 18; i++)
+			{
+				glPushMatrix();
+				{
+					glRotatef(i * 10, 0, 0, -1);
+					glTranslatef(0, 4, 0);
+					glScalef(0.05, 0.1, 1);
+					glutSolidCube(16);
+				}
+				glPopMatrix();
+			}
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-20, -4, 0);
+			glRotatef(60, 0, 0, 1);
+			glScalef(0.1, 0.8, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		//K
+		glPushMatrix();
+		{
+			glTranslatef(-8, 0, 0);
+
+			glScalef(0.1, 1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-3.5, 4, 0);
+			glRotatef(-50, 0, 0, 1);
+			glScalef(0.1, sin(M_PI * 50 / 180), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(-3.5, -4, 0);
+			glRotatef(50, 0, 0, 1);
+			glScalef(0.1, sin(M_PI * 50 / 180), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glTranslatef(-2, 0, 0);
+		//A
+		glPushMatrix();
+		{
+			glTranslatef(12, 0, 0);
+
+			glRotatef(-20, 0, 0, 1);
+			glScalef(0.1, 1.f / sin(70.f / 180.f*M_PI), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(18, 0, 0);
+
+			glRotatef(20, 0, 0, 1);
+			glScalef(0.1, 1.f / sin(70.f / 180.f*M_PI), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(15, 0, 0);
+			glScalef(6.f / 16.f, 0.1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		//V
+		glPushMatrix();
+		{
+			glTranslatef(29, 0, 0);
+
+			glRotatef(20, 0, 0, 1);
+			glScalef(0.1, 1.f / sin(70.f / 180.f*M_PI), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(35, 0, 0);
+
+			glRotatef(-20, 0, 0, 1);
+			glScalef(0.1, 1.f / sin(70.f / 180.f*M_PI), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		//
+		glPushMatrix();
+		{
+			glTranslatef(44, 0, 0);
+
+			glRotatef(-20, 0, 0, 1);
+			glScalef(0.1, 1.f / sin(70.f / 180.f*M_PI), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(50, 0, 0);
+
+			glRotatef(20, 0, 0, 1);
+			glScalef(0.1, 1.f / sin(70.f / 180.f*M_PI), 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+		glPushMatrix();
+		{
+			glTranslatef(47, 0, 0);
+			glScalef(6.f / 16.f, 0.1, 1);
+			glutSolidCube(16);
+		}
+		glPopMatrix();
+	}
+	glPopMatrix();
+
+}
 
 Scene03_BG::Scene03_BG()
 {

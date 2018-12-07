@@ -6,7 +6,7 @@
 GLuint Texture::m_uGlobalTexID{ 0 };
 
 std::vector<GLubyte> getImageBits(CImage* img);
-
+using namespace std;
 Texture::Texture()
 {
 }
@@ -17,6 +17,8 @@ Texture::~Texture()
 
 void Texture::load(std::string path)
 {
+	
+
 	CImage cimg;
 	cimg.Load(path.c_str());
 
@@ -34,7 +36,7 @@ void Texture::load(std::string path)
 	m_Texture.width = cimg.GetWidth();
 
 	GLenum format = GL_BGR_EXT;
-	if (hasAlpha) format = GL_BGRA_EXT;
+	if (hasAlpha) format = GL_BGR_EXT;
 
 	glTexImage2D(GL_TEXTURE_2D, 0, bitsPerPixel, cimg.GetWidth(), cimg.GetHeight(), 0, format, GL_UNSIGNED_BYTE, m_Texture.getBytes());
 
@@ -45,6 +47,8 @@ void Texture::load(std::string path)
 
 	m_uGlobalTexID++;
 	m_bImgLoaded = true;
+
+
 }
 
 void Texture::drawStart(bool usingEnv)
@@ -63,6 +67,7 @@ void Texture::drawStart(bool usingEnv)
 	}
 
 	glBindTexture(GL_TEXTURE_2D, m_Texture.uTextureIdx);
+		
 }
 
 void Texture::drawEnd()
