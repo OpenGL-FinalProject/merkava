@@ -204,7 +204,9 @@ void Scene02_MIR::update(float fDeltaTime)
 				if (get_time > Map.flashTime[flashedNums][1])
 				{
 					if (Map.flashTime[flashedNums][0] == 0)
+					{
 						UI.setGridColor(Map.flashColor[flashedNums].x, Map.flashColor[flashedNums].y, Map.flashColor[flashedNums].z);
+					}
 					else
 						UI.setFlashColor(Map.flashColor[flashedNums].x, Map.flashColor[flashedNums].y, Map.flashColor[flashedNums].z, Map.flashColor[flashedNums].w);
 					flashedNums++;
