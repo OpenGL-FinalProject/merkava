@@ -45,5 +45,6 @@ private:
 	float             temp_miss_num = 0;
 	float             temp_score = 0;
 
+
 };
 
