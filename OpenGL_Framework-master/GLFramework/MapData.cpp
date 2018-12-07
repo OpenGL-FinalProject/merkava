@@ -47,6 +47,22 @@ void MapData::init(int stageNum)
 	}
 	map_file.close();
 
+	map_file.open("Pattern\\effect.txt");
+	while (!map_file.eof())
+	{
+		map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4];
+
+		if (tmp[0] == 0) // flashLight
+		{
+
+		}
+		else if (tmp[0] == 1) // gridColor
+		{
+
+		}
+	}
+	map_file.close();
+
 	map_file.open("Pattern\\pattern.txt");
 	while (!map_file.eof())
 	{
