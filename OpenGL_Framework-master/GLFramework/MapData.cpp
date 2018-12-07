@@ -19,6 +19,7 @@ void MapData::init(int stageNum)
 	savedCameraOffset[2] = 50;
 	pointNum = 0;
 	distance = 0;
+	flashIndex = 0;
 	patternNum = 0;
 	patternLineNum = 0.f;
 	speed = (88.f / 60.f) * 10.f;
@@ -50,15 +51,17 @@ void MapData::init(int stageNum)
 	map_file.open("Pattern\\effect.txt");
 	while (!map_file.eof())
 	{
-		map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4];
+		map_file >> tmp[0] >> tmp[1] >> tmp[2] >> tmp[3] >> tmp[4] >> tmp[5];
 
-		if (tmp[0] == 0) // flashLight
+		if (tmp[0] == 0 || tmp[0] == 1)
 		{
-
-		}
-		else if (tmp[0] == 1) // gridColor
-		{
-
+			flashTime[flashIndex][0] = tmp[0];
+			flashTime[flashIndex][1] = tmp[1] / 100.f;
+			flashColor[flashIndex].x = tmp[2] / 255.f;
+			flashColor[flashIndex].y = tmp[3] / 255.f;
+			flashColor[flashIndex].z = tmp[4] / 255.f;
+			flashColor[flashIndex].w = tmp[3] / 255.f;
+			flashIndex++;
 		}
 	}
 	map_file.close();

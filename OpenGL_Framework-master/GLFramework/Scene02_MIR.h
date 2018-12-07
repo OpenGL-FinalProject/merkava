@@ -60,6 +60,7 @@ private:
 	Vector3			UIPosition;
 	bool			mayidrawUI;
 	bool			gridOn;
+	int				flashedNums;
 	//
 
 	PlayData*		PD = PlayData::getInstance();

@@ -250,7 +250,7 @@ void IngameUI::update(float fDeltaTime)
 	if (!isfadingout)
 	{
 		if (flashColor[3] > 0.f)
-			flashColor[3] -= 0.04f;
+			flashColor[3] -= 0.03f;
 	}
 
 }
