@@ -12,8 +12,9 @@ public:
 	Vector3 camera[100] = {};
 	Vector3 pattern[600] = {};
 
+	int flashIndex;
 	Vector4 flashColor[100];
-	float flashTime[100];
+	float flashTime[100][2];
 
 	int patternHit[600] = {0};
 	float patternTime[600] = {0};

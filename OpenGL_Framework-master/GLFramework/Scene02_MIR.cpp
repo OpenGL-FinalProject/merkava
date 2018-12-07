@@ -36,14 +36,16 @@ void Scene02_MIR::init()
 	get_time = 0;
 	patternNum = 0;
 
+	flashedNums = 0;
+
 	mayidrawUI = true;
 	UI.init(&Map);
 	gridOn = true;
 	UI.setGridColor(0.f, 0.f, 0.f);
 	UI.setFlashColor(1.f, 1.f, 1.f);
 
-	pause = true;
-	MIL.pause();
+	pause = false;
+	//MIL.pause();
 }
 
 void Scene02_MIR::exit()
@@ -71,10 +73,10 @@ void Scene02_MIR::render()
 		//printf("%f %f = %f\n", P.Position.x, Map.getCameraPosition(get_time).x, V3::dist(P.Position, Map.getCameraPosition(get_time)));
 		UI.render(UIPosition, Camera_worldspace, V3::dist(P.Position, Map.getCameraPosition(get_time)));
 	}
-	if (gridOn)
+	if (gridOn && get_time < 79.0f)
 		UI.grid();
+	UI.skybox(get_time);
 	UI.flash(m_Camera.getEye());
-
 }
 
 void Scene02_MIR::reshape(int w, int h)
@@ -197,6 +199,20 @@ void Scene02_MIR::update(float fDeltaTime)
 		}
 		else
 		{
+			if (flashedNums < Map.flashIndex)
+			{
+				if (get_time > Map.flashTime[flashedNums][1])
+				{
+					if (Map.flashTime[flashedNums][0] == 0)
+					{
+						UI.setGridColor(Map.flashColor[flashedNums].x, Map.flashColor[flashedNums].y, Map.flashColor[flashedNums].z);
+					}
+					else
+						UI.setFlashColor(Map.flashColor[flashedNums].x, Map.flashColor[flashedNums].y, Map.flashColor[flashedNums].z, Map.flashColor[flashedNums].w);
+					flashedNums++;
+				}
+			}
+
 			if (get_time >= 138.f)
 			{
 				music_ended = true;
