@@ -31,7 +31,48 @@ void IngameUI::init(MapData* md)
 	score = 0;
 
 	isfadingout = false;
+
+	texture_object[0] = LoadTexture("sky\\Left.bmp", 1024, 1024);
+	texture_object[1] = LoadTexture("sky\\Right.bmp", 1024, 1024);
+	texture_object[2] = LoadTexture("sky\\Up.bmp", 1024, 1024);
+	texture_object[3] = LoadTexture("sky\\Down.bmp", 1024, 1024);
+	texture_object[4] = LoadTexture("sky\\Front.bmp", 1024, 1024);
+	texture_object[5] = LoadTexture("sky\\Back.bmp", 1024, 1024);
 }
+
+GLuint IngameUI::LoadTexture(const char * filename, int width_1, int height_1)
+{
+	GLuint texture;
+	int width, height;
+	unsigned char * data;
+	FILE * file;
+
+	// 파일 열기
+	fopen_s(&file, filename, "rb");
+
+	if (file == NULL) return 0;
+	width = width_1;
+	height = height_1;
+	data = (unsigned char *)malloc(width * height * 3 + 54);
+	fread(data, width * height * 3 + 54, 1, file);
+	fclose(file);
+
+	// 이후 PDF동일
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+
+	// Modulate로 함
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_COLOR, GL_MODULATE);
+
+	gluBuild2DMipmaps(GL_TEXTURE_2D, 3, width, height, GL_BGR_EXT, GL_UNSIGNED_BYTE, data+54);
+	free(data);
+
+	return texture;
+}
+
 
 void IngameUI::samplerRectangle(Vector3 * Camera_worldspace)
 {
@@ -88,6 +129,114 @@ void IngameUI::setFlashColor(float x, float y, float z, float a)
 	flashColor[1] = y;
 	flashColor[2] = z;
 	flashColor[3] = a;
+}
+
+void IngameUI::skybox(float time)
+{
+	glDisable(GL_CULL_FACE);
+	glDisable(GL_BLEND);
+	glColor3f(1.f, 1.f, 1.f);
+	if (time > 79.62f)
+	{
+		glEnable(GL_TEXTURE_2D);
+
+		glBindTexture(GL_TEXTURE_2D, texture_object[0]);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(-1024.f, 1024.f, 1024.f);
+
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(-1024.f, -1024.f, 1024.f);
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(-1024.f, -1024.f, -1024.f);
+
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(-1024.f, 1024.f, -1024.f);
+		glEnd();
+
+		glBindTexture(GL_TEXTURE_2D, texture_object[1]);
+		glBegin(GL_QUADS);
+
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(1024.f, 1024.f, 1024.f);
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(1024.f, -1024.f, 1024.f);
+
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(1024.f, -1024.f, -1024.f);
+		
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(1024.f, 1024.f, -1024.f);
+		glEnd();
+
+		glBindTexture(GL_TEXTURE_2D, texture_object[5]);
+		glBegin(GL_QUADS);
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(-1024.f, 1024.f, 1024.f);
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(-1024.f, -1024.f, 1024.f);
+
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(1024.f, -1024.f, 1024.f);
+
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(1024.f, 1024.f, 1024.f);
+		glEnd();
+
+		glBindTexture(GL_TEXTURE_2D, texture_object[4]);
+		glBegin(GL_QUADS);
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(-1024.f, -1024.f, -1024.f);
+
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(-1024.f, 1024.f, -1024.f);
+
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(1024.f, 1024.f, -1024.f);
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(1024.f, -1024.f, -1024.f);
+
+		glEnd();
+
+		glBindTexture(GL_TEXTURE_2D, texture_object[3]);
+		glBegin(GL_QUADS);
+
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(-1024.f, -1024.f, 1024.f);
+
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(-1024.f, -1024.f, -1024.f);
+
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(1024.f, -1024.f, -1024.f);
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(1024.f, -1024.f, 1024.f);
+
+		glEnd();
+
+		glBindTexture(GL_TEXTURE_2D, texture_object[2]);
+		glBegin(GL_QUADS);
+		glTexCoord2f(1.0f, 1.0f);
+		glVertex3f(1024.f, 1024.f, 1024.f);
+
+		glTexCoord2f(1.0f, 0.0f);
+		glVertex3f(1024.f, 1024.f, -1024.f);
+
+		glTexCoord2f(0.0f, 0.0f);
+		glVertex3f(-1024.f, 1024.f, -1024.f);
+
+		glTexCoord2f(0.0f, 1.0f);
+		glVertex3f(-1024.f, 1024.f, 1024.f);
+
+		glEnd();
+
+		glDisable(GL_TEXTURE_2D);
+	}
 }
 
 void IngameUI::grid()

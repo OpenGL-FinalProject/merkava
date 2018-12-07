@@ -44,8 +44,8 @@ void Scene02_MIR::init()
 	UI.setGridColor(0.f, 0.f, 0.f);
 	UI.setFlashColor(1.f, 1.f, 1.f);
 
-	pause = true;
-	MIL.pause();
+	pause = false;
+	//MIL.pause();
 }
 
 void Scene02_MIR::exit()
@@ -73,10 +73,10 @@ void Scene02_MIR::render()
 		//printf("%f %f = %f\n", P.Position.x, Map.getCameraPosition(get_time).x, V3::dist(P.Position, Map.getCameraPosition(get_time)));
 		UI.render(UIPosition, Camera_worldspace, V3::dist(P.Position, Map.getCameraPosition(get_time)));
 	}
-	if (gridOn)
+	if (gridOn && get_time < 79.0f)
 		UI.grid();
+	UI.skybox(get_time);
 	UI.flash(m_Camera.getEye());
-
 }
 
 void Scene02_MIR::reshape(int w, int h)
