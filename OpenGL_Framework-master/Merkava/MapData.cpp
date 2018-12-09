@@ -196,12 +196,12 @@ void MapData::drawArrowNote(float time, Vector3 getCurrentLineVec, Vector3 Vec_l
 	float temp_time = ((time * 2) - (int)(time) * 2) / 4;
 
 	Vector3 Vec_cross_line_look = V3::normalize(V3::cross(getCurrentLineVec, Vec_look));
-	Vec_cross_line_look = V3::times(Vec_cross_line_look, dir);
+	Vec_cross_line_look = V3::times(Vec_cross_line_look, (float)dir);
 
 	Vector3 Vec_cross_line_look_look = V3::normalize(V3::cross(Vec_look, Vec_cross_line_look));
 
 	float size = 0.4f;
-	float width_height_offset = 1.2; //몰라 변수 이름 짓는게 제일 어려워
+	float width_height_offset = 1.2f; //몰라 변수 이름 짓는게 제일 어려워
 	glPushMatrix();
 	{
 

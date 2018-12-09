@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{41CB5F89-B7A0-4500-8DAF-7D2EC972D93A}</ProjectGuid>
     <RootNamespace>GLFramework</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -89,6 +89,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link />
     <Link>
@@ -118,7 +119,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -129,7 +130,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AirPlane.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="FolderReader.cpp" />
     <ClCompile Include="GLFramework.cpp" />
@@ -139,29 +139,20 @@
     <ClCompile Include="IngameUI.cpp" />
     <ClCompile Include="LinearMath.cpp" />
     <ClCompile Include="MapData.cpp" />
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="NormalObject.cpp" />
-    <ClCompile Include="Object.cpp" />
-    <ClCompile Include="Picking.cpp" />
     <ClCompile Include="PlayData.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Robot.cpp" />
     <ClCompile Include="Scene00BG.cpp" />
     <ClCompile Include="Scene00_Main.cpp" />
-    <ClCompile Include="Scene01_Music_Selection.cpp" />
     <ClCompile Include="Scene02_MIR.cpp" />
-    <ClCompile Include="Scene02.cpp" />
     <ClCompile Include="Scene03.cpp" />
     <ClCompile Include="Sound.cpp" />
     <ClCompile Include="SoundPlayer.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="Transformations.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AirPlane.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="FolderReader.h" />
     <ClInclude Include="GLFramework.h" />
@@ -171,23 +162,15 @@
     <ClInclude Include="IngameUI.h" />
     <ClInclude Include="LinearMath.h" />
     <ClInclude Include="MapData.h" />
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="NormalObject.h" />
-    <ClInclude Include="Object.h" />
-    <ClInclude Include="Picking.h" />
     <ClInclude Include="PlayData.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Robot.h" />
     <ClInclude Include="Scene00_BG.h" />
     <ClInclude Include="Scene00_Main.h" />
-    <ClInclude Include="Scene01_Music_Selection.h" />
     <ClInclude Include="Scene02_MIR.h" />
-    <ClInclude Include="Scene02.h" />
     <ClInclude Include="Scene03.h" />
     <ClInclude Include="Sound.h" />
     <ClInclude Include="SoundPlayer.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Texture.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="Transformations.h" />
   </ItemGroup>

@@ -95,9 +95,6 @@ void S03Main::keyboard(int key, bool pressed, int x, int y, bool special)
 {
 	if (pressed)
 	{
-		switch (key)
-		{
-		}
 	}
 }
 

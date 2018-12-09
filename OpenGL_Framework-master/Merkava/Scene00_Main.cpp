@@ -8,9 +8,6 @@
 	
 S00_Logo::S00_Logo()
 {
-	elapsed_time_since_scene_change_started = 0.f;
-	time_to_change_scene = 2.f;
-
 
 }
 
@@ -25,6 +22,11 @@ void S00_Logo::init()
 	m_Camera.setPerspective(60.f, 0.125f, 3500.f);
 	m_Camera.setSensitivity(1.f);
 
+	is_started_to_change_scene = false;
+	get_time = 0;
+	start_button_alpha = 0.f;
+	elapsed_time_since_scene_change_started = 0.f;
+	time_to_change_scene = 2.f;
 }
 
 void S00_Logo::exit()

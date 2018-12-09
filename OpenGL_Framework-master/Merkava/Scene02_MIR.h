@@ -2,9 +2,6 @@
 #include "GLScene.h"
 
 /* UTILITIES */
-#include "Model.h"
-#include "Object.h"
-#include "NormalObject.h"
 #include "Camera.h"
 #include "SoundPlayer.h"
 #include "MapData.h"

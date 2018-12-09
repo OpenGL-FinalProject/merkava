@@ -18,13 +18,13 @@ public:
 		float alpha_increase_speed;
 		float life_span;  //elapsed_tim >= life_spane -> kill this object
 		float elapsed_time;
-		
-	};
+	}hit_effect_cube;
+
 	typedef struct hit_effect_cube_set
 	{
 		Vector3 pattern_hit_pos;
 		std::vector<hit_effect_cube*> hit_effect_cubes;
-	};
+	}hit_effect_cube_set;
 
 	void create_cube_set(const Vector3& _pattern_hit_pos, const int& patternHit);
 	void update(float fDeltaTime);
@@ -32,6 +32,5 @@ public:
 
 private:
 
-	
 	std::vector<hit_effect_cube_set*> hit_effect_cube_sets;
 };

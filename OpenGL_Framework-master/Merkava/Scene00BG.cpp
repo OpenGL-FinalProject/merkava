@@ -202,9 +202,9 @@ void Scene00_TITLE::render()
 			{
 				glPushMatrix();
 				{
-					glRotatef(i * 10, 0, 0, -1);
-					glTranslatef(0, 4, 0);
-					glScalef(0.05, 0.1, 1);
+					glRotatef(i * 10.f, 0, 0, -1.f);
+					glTranslatef(0, 4.f, 0);
+					glScalef(0.05f, 0.1f, 1);
 					glutSolidCube(16);
 				}
 				glPopMatrix();

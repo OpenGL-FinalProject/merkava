@@ -75,20 +75,8 @@
     <ClCompile Include="Transformations.cpp">
       <Filter>Source Files\Utilities\Space and Time</Filter>
     </ClCompile>
-    <ClCompile Include="Picking.cpp">
-      <Filter>Source Files\Utilities\Space and Time</Filter>
-    </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Source Files\Utilities\Space and Time</Filter>
-    </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files\Utilities\3D Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Source Files\Utilities\3D Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>Source Files\Utilities\3D Objects</Filter>
     </ClCompile>
     <ClCompile Include="FolderReader.cpp">
       <Filter>Source Files\Utilities\Media</Filter>
@@ -105,20 +93,8 @@
     <ClCompile Include="Scene00_Main.cpp">
       <Filter>Source Files\Scenes</Filter>
     </ClCompile>
-    <ClCompile Include="NormalObject.cpp">
-      <Filter>Source Files\Utilities\3D Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene02.cpp">
-      <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Scene03.cpp">
       <Filter>Source Files\Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="AirPlane.cpp">
-      <Filter>Source Files\Utilities\3D Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Robot.cpp">
-      <Filter>Source Files\Utilities\Space and Time</Filter>
     </ClCompile>
     <ClCompile Include="MapData.cpp">
       <Filter>Source Files\Map</Filter>
@@ -134,9 +110,6 @@
     </ClCompile>
     <ClCompile Include="HitEffect.cpp">
       <Filter>Source Files\Utilities\3D Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene01_Music_Selection.cpp">
-      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
     <ClCompile Include="IngameUI.cpp">
       <Filter>Source Files\Map</Filter>
@@ -167,20 +140,8 @@
     <ClInclude Include="Transformations.h">
       <Filter>Header Files\Utilities\Space and Time</Filter>
     </ClInclude>
-    <ClInclude Include="Picking.h">
-      <Filter>Header Files\Utilities\Space and Time</Filter>
-    </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Header Files\Utilities\Space and Time</Filter>
-    </ClInclude>
-    <ClInclude Include="Model.h">
-      <Filter>Header Files\Utilities\3D Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Header Files\Utilities\3D Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
     <ClInclude Include="FolderReader.h">
       <Filter>Header Files\Utilities\Media</Filter>
@@ -197,20 +158,8 @@
     <ClInclude Include="Scene00_Main.h">
       <Filter>Header Files\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="NormalObject.h">
-      <Filter>Header Files\Utilities\3D Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene02.h">
-      <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="Scene03.h">
       <Filter>Header Files\Scenes</Filter>
-    </ClInclude>
-    <ClInclude Include="AirPlane.h">
-      <Filter>Header Files\Utilities\3D Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Robot.h">
-      <Filter>Header Files\Utilities\3D Objects</Filter>
     </ClInclude>
     <ClInclude Include="MapData.h">
       <Filter>Header Files\Map</Filter>
@@ -226,9 +175,6 @@
     </ClInclude>
     <ClInclude Include="HitEffect.h">
       <Filter>Header Files\Utilities\3D Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene01_Music_Selection.h">
-      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
     <ClInclude Include="IngameUI.h">
       <Filter>Header Files\Map</Filter>

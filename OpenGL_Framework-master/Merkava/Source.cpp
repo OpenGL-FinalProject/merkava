@@ -2,9 +2,6 @@
 #include "GLFramework.h"
 #include <windows.h>
 
-
-
-
 using namespace std;
 
 GLFramework fw("Merkava");

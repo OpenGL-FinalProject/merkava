@@ -2,20 +2,17 @@
 #include "GLScene.h"
 
 /* UTILITIES */
-#include "Model.h"
-#include "NormalObject.h"
 #include "Camera.h"
-#include "SoundPlayer.h"
+#include "Scene00_BG.h"
+
 /* ------------ */
 
-//¿ÃπÃ ¡◊¿∫ æ¿¿‘¥œ¥Ÿ
-
-class S01_MusicSelection :
+class S00_Logo :
 	public GLScene
 {
 public:
-	S01_MusicSelection();
-	virtual ~S01_MusicSelection();
+	S00_Logo();
+	virtual ~S00_Logo();
 
 	virtual void init();
 	virtual void exit();
@@ -26,13 +23,21 @@ public:
 	virtual void mouse(int button, bool pressed, int x, int y);
 	virtual void motion(bool pressed, int x, int y);
 	virtual void update(float fDeltaTime);
+	void start_to_change_scene();
+	GLubyte* LoadDIBitmap(const char *filename, BITMAPINFO **info);
+
 
 private:
-	float			rX, rY, rZ;
-	int				tX, tY;
-	Camera			m_Camera;
-	NormalObject	m_Plane;
-	NormalObject    m_Sphere;
 
-	bool s;
+	Camera	      m_Camera;
+	Scene00_BG    BG;
+	Scene00_TITLE TITLE;
+
+	float         get_time;
+	float         start_button_alpha;
+	bool          is_started_to_change_scene;
+	float         elapsed_time_since_scene_change_started;
+	float         time_to_change_scene;
 };
+
+	

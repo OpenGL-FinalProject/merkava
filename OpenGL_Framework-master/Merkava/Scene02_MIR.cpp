@@ -29,9 +29,10 @@ void Scene02_MIR::init()
 	k = false;
 
 	MIL.selectFolder("Resources");
+	MIL.play();
+	
 	clap.addSound("FX\\clap.mp3", true);
 
-	MIL.play();
 	Map.init(1);
 	get_time = 0;
 	patternNum = 0;
@@ -44,6 +45,7 @@ void Scene02_MIR::init()
 	UI.setGridColor(0.f, 0.f, 0.f);
 	UI.setFlashColor(1.f, 1.f, 1.f);
 
+	
 	pause = false;
 	//MIL.pause();
 }
@@ -106,6 +108,12 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 		case '!':
 			coaster = (coaster + 1) % 2; break;
 			break;
+		case '>':
+			get_time += 0.01;
+			break;
+		case '<':
+			get_time -= 0.01;
+			break;
 		case 'g':
 			gridOn = (gridOn + 1) % 2; break;
 		case ' ':
@@ -115,7 +123,6 @@ void Scene02_MIR::keyboard(int key, bool pressed, int x, int y, bool special)
 				if (temp_clap.is_hit)
 				{
 					// note hit
-					printf("clap\n");
 					hit_effect.create_cube_set(temp_clap.pattern, temp_clap.patternHit);
 					UI.scoreUp(temp_clap.patternHit);
 					//UI.setFlashColor(1, 0, 0, 0.5);
@@ -175,7 +182,6 @@ void Scene02_MIR::update(float fDeltaTime)
 		hit_effect.update(fDeltaTime);
 		if (P.Position == Map.pattern[patternNum])
 		{
-			printf("note\n");
 			patternNum++;
 		}
 		if (coaster)
